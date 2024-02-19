@@ -7,7 +7,7 @@ func _process(_delta):
 
 
 func CrankTheCrank():
-	if PlayerEnteredInteractionHitbox == 1 and Input.is_action_pressed("Interact") and global.WindedUpTimer <= 180:
+	if PlayerEnteredInteractionHitbox == 1 and Input.is_action_pressed("Interact") and global.WindedUpTimer <= 100:
 		global.WindedUpTimer += 1
 	elif global.WindedUpTimer != 0:
 		global.WindedUpTimer -= 1

@@ -1,2 +1,5 @@
 res://main_scene.tscn
 res://Rock.gd
+res://Player.gd
+res://DEBUG DeathBox.gd
+res://Crank.gd

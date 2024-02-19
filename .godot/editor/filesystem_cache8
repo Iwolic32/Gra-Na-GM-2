@@ -1,24 +1,27 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708196283
+::res://::1708367961
 Box.gd::GDScript::-1::1707581835::0::1::::<>RigidBody2D<>::
 BOX.png::CompressedTexture2D::4610024132855867184::1706967573::1706967574::1::::<><>::
 BreakableBox.gd::GDScript::-1::1708194540::0::1::::<>StaticBody2D<>::
 Button.gd::GDScript::-1::1706966130::0::1::::<>StaticBody2D<>::
+Cat gay sex.png::CompressedTexture2D::4122535267952032379::1708367961::1708367961::1::::<><>::
 CharacterBody2D2.gd::GDScript::-1::1706467381::0::1::::<>CharacterBody2D<>::
 Crank.gd::GDScript::-1::1708175944::0::1::::<>StaticBody2D<>::
 CRANK.png::CompressedTexture2D::7971857286116384135::1706967573::1706967574::1::::<><>::
 DEBUG RockProvider.gd::GDScript::-1::1708183065::0::1::::<>Area2D<>::
 export_presets.cfg::TextFile::-1::1707582014::0::1::::<><>::
+Eye center big.png::CompressedTexture2D::9074354564886869857::1708367961::1708367961::1::::<><>::
 Global.gd::GDScript::-1::1708194609::0::1::::<>RichTextLabel<>::
 icon.svg::CompressedTexture2D::4384930846229977542::1706464751::1706464765::1::::<><>::
 Key.gd::GDScript::-1::1707581696::0::1::::<>StaticBody2D<>::
 Ladder.gd::GDScript::-1::1707501351::0::1::::<>StaticBody2D<>::
 Ladder.png::CompressedTexture2D::695387126113504730::1707501959::1707501960::1::::<><>::
-main_scene.tscn::PackedScene::9136619876685865494::1708194810::0::1::::<><>::res://Box.gd<>res://Player.gd<>uid://b6xeoocl3x14w::::res://BOX.png<>res://Global.gd<>res://Button.gd<>res://Crank.gd<>uid://c5j5tt5raj8sm::::res://PLAYER.png<>res://MovingWall.gd<>uid://c7edarkkuigu8::::res://WALL.png<>uid://dltvlbp6e7s4f::::res://CRANK.png<>res://Key.gd<>res://RedKeyDoor.gd<>res://Ladder.gd<>uid://j536otot6ole::::res://Ladder.png<>res://BreakableBox.gd<>res://Spike.gd<>res://DEBUG RockProvider.gd<>res://Rock.gd
+main_scene.tscn::PackedScene::9136619876685865494::1708367874::0::1::::<><>::res://Box.gd<>res://Player.gd<>uid://b6xeoocl3x14w::::res://BOX.png<>res://Global.gd<>res://Button.gd<>res://Crank.gd<>res://MovingWall.gd<>uid://c7edarkkuigu8::::res://WALL.png<>uid://dltvlbp6e7s4f::::res://CRANK.png<>res://Key.gd<>res://RedKeyDoor.gd<>res://Ladder.gd<>uid://j536otot6ole::::res://Ladder.png<>uid://dp4hiky4wt3rq::::res://SpriteStaszek.png<>res://BreakableBox.gd<>res://Spike.gd<>res://DEBUG RockProvider.gd<>res://Rock.gd
 MovingWall.gd::GDScript::-1::1706967256::0::1::::<>StaticBody2D<>::
-Player.gd::GDScript::-1::1708186047::0::1::::<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1708365747::0::1::::<>CharacterBody2D<>::
 PLAYER.png::CompressedTexture2D::6898942561241478492::1706968063::1706968063::1::::<><>::
 RedKeyDoor.gd::GDScript::-1::1707581960::0::1::::<>StaticBody2D<>::
-Rock.gd::GDScript::-1::1708194609::0::1::::<>RigidBody2D<>::
+Rock.gd::GDScript::-1::1708365354::0::1::::<>RigidBody2D<>::
 Spike.gd::GDScript::-1::1708183065::0::1::::<>RigidBody2D<>::
+SpriteStaszek.png::CompressedTexture2D::8272401529474740698::1708367372::1708367372::1::::<><>::
 WALL.png::CompressedTexture2D::7027324934624176545::1706967573::1706967574::1::::<><>::

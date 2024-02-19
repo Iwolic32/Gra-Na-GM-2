@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Global.gd" id="3_7arc3"]
 [ext_resource type="Script" path="res://Button.gd" id="3_cu2m7"]
 [ext_resource type="Script" path="res://Crank.gd" id="4_3oa5x"]
-[ext_resource type="Texture2D" uid="uid://c5j5tt5raj8sm" path="res://PLAYER.png" id="5_gebl2"]
 [ext_resource type="Script" path="res://MovingWall.gd" id="6_4biur"]
 [ext_resource type="Texture2D" uid="uid://c7edarkkuigu8" path="res://WALL.png" id="6_bpjhq"]
 [ext_resource type="Texture2D" uid="uid://dltvlbp6e7s4f" path="res://CRANK.png" id="9_1c0ah"]
@@ -14,10 +13,13 @@
 [ext_resource type="Script" path="res://RedKeyDoor.gd" id="11_h2j2i"]
 [ext_resource type="Script" path="res://Ladder.gd" id="11_mwafh"]
 [ext_resource type="Texture2D" uid="uid://j536otot6ole" path="res://Ladder.png" id="12_v3ddg"]
+[ext_resource type="Texture2D" uid="uid://dp4hiky4wt3rq" path="res://SpriteStaszek.png" id="13_hkv8v"]
+[ext_resource type="Texture2D" uid="uid://d2jxj80ul8jyv" path="res://Eye center big.png" id="15_v066o"]
 [ext_resource type="Script" path="res://BreakableBox.gd" id="15_w0wqt"]
 [ext_resource type="Script" path="res://Spike.gd" id="16_wmlgx"]
 [ext_resource type="Script" path="res://DEBUG RockProvider.gd" id="17_ucwk2"]
 [ext_resource type="Script" path="res://Rock.gd" id="18_2rwkf"]
+[ext_resource type="Script" path="res://DEBUG DeathBox.gd" id="20_ikynr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4bov"]
 
@@ -30,46 +32,34 @@ size = Vector2(4.00002, 17.6)
 size = Vector2(3.99997, 17.8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdxa6"]
-size = Vector2(1145, 344)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_epg3s"]
-size = Vector2(20, 184)
+size = Vector2(1124.5, 344)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vvwp"]
 size = Vector2(198, 508)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oabqk"]
-size = Vector2(20, 83)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdw5g"]
-size = Vector2(20, 83.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8udhk"]
 size = Vector2(2759, 508)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqntb"]
-size = Vector2(91, 76)
+size = Vector2(91, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_erb76"]
-size = Vector2(2820, 262)
+size = Vector2(2875, 262)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ephv"]
-size = Vector2(109, 445)
+size = Vector2(69, 445)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_erwjb"]
 size = Vector2(23, 556)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8ka7"]
-size = Vector2(540, 20)
+size = Vector2(49, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yipo0"]
-size = Vector2(589, 20)
+size = Vector2(595, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03w5t"]
 size = Vector2(13, 243)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmfkh"]
-size = Vector2(55, 242)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elpav"]
 size = Vector2(24, 181)
@@ -78,10 +68,16 @@ size = Vector2(24, 181)
 size = Vector2(232.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bch3p"]
-size = Vector2(638, 20)
+size = Vector2(923, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpc4p"]
 size = Vector2(62, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pni10"]
+size = Vector2(20, 178)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8634"]
+size = Vector2(629, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vor2"]
 size = Vector2(40, 2)
@@ -104,6 +100,8 @@ size = Vector2(20, 178)
 size = Vector2(28, 178)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdpi5"]
+radius = 7.0
+height = 48.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6yl7"]
 size = Vector2(61, 156)
@@ -176,24 +174,9 @@ position = Vector2(-0.5, 162)
 scale = Vector2(2.8625, 0.86)
 texture = ExtResource("6_bpjhq")
 
-[node name="Sprite2D3" type="Sprite2D" parent="MovingWallSectionColisions"]
-position = Vector2(562, -82)
-scale = Vector2(0.05, 0.46)
-texture = ExtResource("6_bpjhq")
-
 [node name="Sprite2D4" type="Sprite2D" parent="MovingWallSectionColisions"]
 position = Vector2(651, 80)
 scale = Vector2(0.495, 1.27)
-texture = ExtResource("6_bpjhq")
-
-[node name="Sprite2D5" type="Sprite2D" parent="MovingWallSectionColisions"]
-position = Vector2(740, -132.5)
-scale = Vector2(0.05, 0.2075)
-texture = ExtResource("6_bpjhq")
-
-[node name="Sprite2D6" type="Sprite2D" parent="MovingWallSectionColisions"]
-position = Vector2(829, -132.5)
-scale = Vector2(0.05, 0.2075)
 texture = ExtResource("6_bpjhq")
 
 [node name="Sprite2D7" type="Sprite2D" parent="MovingWallSectionColisions"]
@@ -217,35 +200,23 @@ scale = Vector2(0.0575, 1.39)
 texture = ExtResource("6_bpjhq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingWallSectionColisions"]
-position = Vector2(0, 162)
+position = Vector2(-10.25, 162)
 shape = SubResource("RectangleShape2D_tdxa6")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="MovingWallSectionColisions"]
-position = Vector2(562, -82)
-shape = SubResource("RectangleShape2D_epg3s")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="MovingWallSectionColisions"]
 position = Vector2(651, 80)
 shape = SubResource("RectangleShape2D_3vvwp")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="MovingWallSectionColisions"]
-position = Vector2(740, -132.5)
-shape = SubResource("RectangleShape2D_oabqk")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="MovingWallSectionColisions"]
-position = Vector2(829, -132.25)
-shape = SubResource("RectangleShape2D_hdw5g")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="MovingWallSectionColisions"]
 position = Vector2(2198.5, 80)
 shape = SubResource("RectangleShape2D_8udhk")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="MovingWallSectionColisions"]
-position = Vector2(506.5, -48)
+position = Vector2(506.5, -48.5)
 shape = SubResource("RectangleShape2D_jqntb")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="MovingWallSectionColisions"]
-position = Vector2(1940, -367)
+position = Vector2(1967.5, -367)
 shape = SubResource("RectangleShape2D_erb76")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="MovingWallSectionColisions"]
@@ -260,13 +231,13 @@ shape = SubResource("RectangleShape2D_erwjb")
 position = Vector2(4028, -21)
 
 [node name="Sprite2D" type="Sprite2D" parent="LadderSectionCollisions"]
-position = Vector2(-49.25, 165)
-scale = Vector2(0.12125, 0.05)
+position = Vector2(-49.5, 165)
+scale = Vector2(0.1225, 0.05)
 texture = ExtResource("6_bpjhq")
 
 [node name="Sprite2D2" type="Sprite2D" parent="LadderSectionCollisions"]
-position = Vector2(318.5, 164)
-scale = Vector2(1.4725, 0.05)
+position = Vector2(321.5, 164)
+scale = Vector2(1.4875, 0.05)
 texture = ExtResource("6_bpjhq")
 
 [node name="Sprite2D3" type="Sprite2D" parent="LadderSectionCollisions"]
@@ -280,25 +251,26 @@ scale = Vector2(0.0599995, 0.4525)
 texture = ExtResource("6_bpjhq")
 
 [node name="Sprite2D5" type="Sprite2D" parent="LadderSectionCollisions"]
-position = Vector2(-115.5, -34)
-scale = Vector2(2.2475, 0.05)
+position = Vector2(27.0001, -34)
+scale = Vector2(2.96, 0.05)
+texture = ExtResource("6_bpjhq")
+
+[node name="Sprite2D6" type="Sprite2D" parent="LadderSectionCollisions"]
+position = Vector2(609, 65)
+scale = Vector2(0.0500011, 0.445)
 texture = ExtResource("6_bpjhq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LadderSectionCollisions"]
-position = Vector2(-295, 165)
+position = Vector2(-49.5, 165)
 shape = SubResource("RectangleShape2D_v8ka7")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LadderSectionCollisions"]
-position = Vector2(318.5, 164)
+position = Vector2(321.5, 164)
 shape = SubResource("RectangleShape2D_yipo0")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="LadderSectionCollisions"]
 position = Vector2(41.5, 295.5)
 shape = SubResource("RectangleShape2D_03w5t")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="LadderSectionCollisions"]
-position = Vector2(-70.5, 296)
-shape = SubResource("RectangleShape2D_tmfkh")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="LadderSectionCollisions"]
 position = Vector2(-553, 66.5)
@@ -309,12 +281,26 @@ position = Vector2(-449.25, -34)
 shape = SubResource("RectangleShape2D_yfwen")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="LadderSectionCollisions"]
-position = Vector2(15, -34)
+position = Vector2(157.5, -34)
 shape = SubResource("RectangleShape2D_bch3p")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="LadderSectionCollisions"]
 position = Vector2(-319, -54)
 shape = SubResource("RectangleShape2D_gpc4p")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LadderSectionCollisions"]
+position = Vector2(609, 65)
+shape = SubResource("RectangleShape2D_pni10")
+
+[node name="DarknessSectionCollisions" type="StaticBody2D" parent="."]
+position = Vector2(4620, 508)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarknessSectionCollisions"]
+position = Vector2(-229.5, -122)
+shape = SubResource("RectangleShape2D_r8634")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DarknessSectionCollisions"]
+polygon = PackedVector2Array(-462, -50, -430, -48, -428, -24, -403, -21, -389, 1, -372, 1, -369, 38, -353, 39, -328, 48, -300, 55, -170, 55, -170, 104, -462, 103)
 
 [node name="Button" type="StaticBody2D" parent="."]
 position = Vector2(870, 621)
@@ -327,7 +313,7 @@ shape = SubResource("RectangleShape2D_2vor2")
 debug_color = Color(0.984314, 0, 0, 0.419608)
 
 [node name="Crank" type="StaticBody2D" parent="."]
-position = Vector2(1856, 448)
+position = Vector2(2531, 448)
 script = ExtResource("4_3oa5x")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crank"]
@@ -390,16 +376,19 @@ position = Vector2(4028, -21)
 script = ExtResource("11_h2j2i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedKeyDoor"]
-position = Vector2(324, 65)
+position = Vector2(80, 65)
 shape = SubResource("RectangleShape2D_7ngeg")
 debug_color = Color(0.956863, 0, 0.545098, 0.419608)
 
 [node name="Area2D" type="Area2D" parent="RedKeyDoor"]
-position = Vector2(324, 67)
+position = Vector2(80, 65)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedKeyDoor/Area2D"]
-position = Vector2(-4, -2)
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_00ub7")
+
+[node name="Memory" type="StaticBody2D" parent="."]
+position = Vector2(4450, 89)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(333, 183)
@@ -407,7 +396,7 @@ script = ExtResource("1_p8phd")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 scale = Vector2(0.5, 0.75)
-texture = ExtResource("5_gebl2")
+texture = ExtResource("13_hkv8v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_mdpi5")
@@ -423,6 +412,11 @@ offset_bottom = 324.0
 theme_override_colors/default_color = Color(0.807843, 0.00392157, 0.988235, 1)
 text = "Text"
 script = ExtResource("3_7arc3")
+metadata/_edit_use_anchors_ = true
+
+[node name="Death1" type="Sprite2D" parent="CharacterBody2D/Camera2D"]
+position = Vector2(510, -282)
+texture = ExtResource("15_v066o")
 
 [node name="BreakableBox" type="StaticBody2D" parent="."]
 position = Vector2(3598, 56)
@@ -495,8 +489,16 @@ shape = SubResource("CircleShape2D_cjiw3")
 shape = SubResource("CircleShape2D_qbeo5")
 
 [node name="Timer" type="Timer" parent="Rock"]
-wait_time = 0.02
+wait_time = 0.01
 one_shot = true
+
+[node name="DEBUG DeathBox" type="Area2D" parent="."]
+position = Vector2(129, 659)
+script = ExtResource("20_ikynr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DEBUG DeathBox"]
+position = Vector2(-9, -15.5)
+shape = SubResource("RectangleShape2D_8kiha")
 
 [connection signal="body_entered" from="Box/Left" to="Box" method="_on_left_body_entered"]
 [connection signal="body_exited" from="Box/Left" to="Box" method="_on_left_body_exited"]
@@ -517,3 +519,4 @@ one_shot = true
 [connection signal="body_entered" from="Rock/Area2D" to="Rock" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Rock/Area2D" to="Rock" method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Rock/Timer" to="Rock" method="_on_timer_timeout"]
+[connection signal="body_entered" from="DEBUG DeathBox" to="DEBUG DeathBox" method="_on_body_entered"]

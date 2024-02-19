@@ -16,6 +16,7 @@ func _ready():
 
 func _process(_delta):
 	global.PlayerPosition = position
+	PlayerScreenCorruption()
 	PlayerInput()
 	AddFriction()
 	PlayerMovement()
@@ -54,4 +55,10 @@ func PlayerDeath():
 	if global.PlayerJustDied == 1:
 		position = global.LastCheckpointLocation
 		global.PlayerJustDied = 0
+
+func PlayerScreenCorruption():
+	if global.PlayerDied == 0:
+		$Camera2D/Death1.hide()
+	if global.PlayerDied == 1:
+		$Camera2D/Death1.show()
 
