@@ -3,3 +3,7 @@ res://Rock.gd
 res://Player.gd
 res://DEBUG DeathBox.gd
 res://Crank.gd
+res://Memory1 (LadderSection).gd
+res://DarknessCollisions.gd
+res://Global.gd
+res://Spike.gd

@@ -21,6 +21,7 @@ func _process(_delta):
 	AddFriction()
 	PlayerMovement()
 	PlayerDeath()
+	PlayerSprite()
 	move_and_slide() ##### VERY FUCKING CRUICIAL TO MOVING ||FOR FUTURE YOU||
 
 
@@ -57,8 +58,13 @@ func PlayerDeath():
 		global.PlayerJustDied = 0
 
 func PlayerScreenCorruption():
-	if global.PlayerDied == 0:
+	if global.PlayerDeathCounter == 0:
 		$Camera2D/Death1.hide()
-	if global.PlayerDied == 1:
+	if global.PlayerDeathCounter == 1:
 		$Camera2D/Death1.show()
 
+func PlayerSprite():
+	if global.Facing == -1:
+		$Sprite2D.flip_h = true
+	if global.Facing == 1:
+		$Sprite2D.flip_h = false

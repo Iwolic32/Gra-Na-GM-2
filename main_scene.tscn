@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://d3f32aoypr8es"]
+[gd_scene load_steps=60 format=3 uid="uid://d3f32aoypr8es"]
 
 [ext_resource type="Script" path="res://Box.gd" id="1_a21ha"]
 [ext_resource type="Script" path="res://Player.gd" id="1_p8phd"]
@@ -6,12 +6,14 @@
 [ext_resource type="Script" path="res://Global.gd" id="3_7arc3"]
 [ext_resource type="Script" path="res://Button.gd" id="3_cu2m7"]
 [ext_resource type="Script" path="res://Crank.gd" id="4_3oa5x"]
+[ext_resource type="Script" path="res://DarknessCollisions.gd" id="4_il0hk"]
 [ext_resource type="Script" path="res://MovingWall.gd" id="6_4biur"]
 [ext_resource type="Texture2D" uid="uid://c7edarkkuigu8" path="res://WALL.png" id="6_bpjhq"]
 [ext_resource type="Texture2D" uid="uid://dltvlbp6e7s4f" path="res://CRANK.png" id="9_1c0ah"]
 [ext_resource type="Script" path="res://Key.gd" id="10_d1d2h"]
 [ext_resource type="Script" path="res://RedKeyDoor.gd" id="11_h2j2i"]
 [ext_resource type="Script" path="res://Ladder.gd" id="11_mwafh"]
+[ext_resource type="Script" path="res://Memory1 (LadderSection).gd" id="12_r70cv"]
 [ext_resource type="Texture2D" uid="uid://j536otot6ole" path="res://Ladder.png" id="12_v3ddg"]
 [ext_resource type="Texture2D" uid="uid://dp4hiky4wt3rq" path="res://SpriteStaszek.png" id="13_hkv8v"]
 [ext_resource type="Texture2D" uid="uid://d2jxj80ul8jyv" path="res://Eye center big.png" id="15_v066o"]
@@ -79,6 +81,9 @@ size = Vector2(20, 178)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8634"]
 size = Vector2(629, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnei5"]
+size = Vector2(20, 62)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vor2"]
 size = Vector2(40, 2)
 
@@ -98,6 +103,9 @@ size = Vector2(20, 178)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00ub7"]
 size = Vector2(28, 178)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2x5c"]
+size = Vector2(62, 62)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdpi5"]
 radius = 7.0
@@ -302,6 +310,15 @@ shape = SubResource("RectangleShape2D_r8634")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DarknessSectionCollisions"]
 polygon = PackedVector2Array(-462, -50, -430, -48, -428, -24, -403, -21, -389, 1, -372, 1, -369, 38, -353, 39, -328, 48, -300, 55, -170, 55, -170, 104, -462, 103)
 
+[node name="DarknessCollisions" type="StaticBody2D" parent="."]
+position = Vector2(4144, 418)
+script = ExtResource("4_il0hk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarknessCollisions"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_nnei5")
+debug_color = Color(0, 0, 0, 0.419608)
+
 [node name="Button" type="StaticBody2D" parent="."]
 position = Vector2(870, 621)
 script = ExtResource("3_cu2m7")
@@ -387,8 +404,15 @@ position = Vector2(80, 65)
 position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_00ub7")
 
-[node name="Memory" type="StaticBody2D" parent="."]
+[node name="Memory1 (LadderSection)" type="StaticBody2D" parent="."]
 position = Vector2(4450, 89)
+script = ExtResource("12_r70cv")
+
+[node name="Area2D" type="Area2D" parent="Memory1 (LadderSection)"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Memory1 (LadderSection)/Area2D"]
+shape = SubResource("RectangleShape2D_h2x5c")
+debug_color = Color(0, 0.647059, 0.172549, 0.419608)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(333, 183)
@@ -512,6 +536,7 @@ shape = SubResource("RectangleShape2D_8kiha")
 [connection signal="body_exited" from="Ladder/Area2D" to="Ladder" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="RedKey/Area2D" to="RedKey" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="RedKeyDoor/Area2D" to="RedKeyDoor" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Memory1 (LadderSection)/Area2D" to="Memory1 (LadderSection)" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="BreakableBox/Area2D" to="BreakableBox" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Spike/PlayerDetection" to="Spike" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Spike/KillingCollision" to="Spike" method="_on_killing_collision_body_entered"]

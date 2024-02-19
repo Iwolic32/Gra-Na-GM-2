@@ -11,5 +11,5 @@ func _on_area_2d_body_entered(body):
 
 func _on_killing_collision_body_entered(body):
 	if body.is_in_group("Player"):
-		global.PlayerDied += 1
+		global.PlayerDeathCounter += 1
 		global.PlayerJustDied = 1
