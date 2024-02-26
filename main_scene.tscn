@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://d3f32aoypr8es"]
+[gd_scene load_steps=59 format=3 uid="uid://d3f32aoypr8es"]
 
 [ext_resource type="Script" path="res://Box.gd" id="1_a21ha"]
 [ext_resource type="Script" path="res://Player.gd" id="1_p8phd"]
@@ -16,9 +16,9 @@
 [ext_resource type="Script" path="res://Memory1 (LadderSection).gd" id="12_r70cv"]
 [ext_resource type="Texture2D" uid="uid://j536otot6ole" path="res://Ladder.png" id="12_v3ddg"]
 [ext_resource type="Texture2D" uid="uid://dp4hiky4wt3rq" path="res://SpriteStaszek.png" id="13_hkv8v"]
-[ext_resource type="Texture2D" uid="uid://d2jxj80ul8jyv" path="res://Eye center big.png" id="15_v066o"]
 [ext_resource type="Script" path="res://BreakableBox.gd" id="15_w0wqt"]
 [ext_resource type="Script" path="res://Spike.gd" id="16_wmlgx"]
+[ext_resource type="Texture2D" uid="uid://brqv8tutc3m6u" path="res://Average RimRim.png" id="17_u7837"]
 [ext_resource type="Script" path="res://DEBUG RockProvider.gd" id="17_ucwk2"]
 [ext_resource type="Script" path="res://Rock.gd" id="18_2rwkf"]
 [ext_resource type="Script" path="res://DEBUG DeathBox.gd" id="20_ikynr"]
@@ -78,9 +78,6 @@ size = Vector2(62, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pni10"]
 size = Vector2(20, 178)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8634"]
-size = Vector2(629, 20)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnei5"]
 size = Vector2(20, 62)
 
@@ -108,8 +105,8 @@ size = Vector2(28, 178)
 size = Vector2(62, 62)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdpi5"]
-radius = 7.0
-height = 48.0
+radius = 15.0
+height = 64.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6yl7"]
 size = Vector2(61, 156)
@@ -303,12 +300,20 @@ shape = SubResource("RectangleShape2D_pni10")
 [node name="DarknessSectionCollisions" type="StaticBody2D" parent="."]
 position = Vector2(4620, 508)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DarknessSectionCollisions"]
-position = Vector2(-229.5, -122)
-shape = SubResource("RectangleShape2D_r8634")
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DarknessSectionCollisions"]
-polygon = PackedVector2Array(-462, -50, -430, -48, -428, -24, -403, -21, -389, 1, -372, 1, -369, 38, -353, 39, -328, 48, -300, 55, -170, 55, -170, 104, -462, 103)
+polygon = PackedVector2Array(-462, -50, -430, -48, -428, -24, -403, -21, -389, 1, -372, 1, -369, 38, -353, 39, -328, 48, -300, 55, 458, 56, 457, 103, -462, 103)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="DarknessSectionCollisions"]
+position = Vector2(-534, -122)
+polygon = PackedVector2Array(-10, -10, 974, -11, 973, 43, 68, 11, -10, 10)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="DarknessSectionCollisions"]
+position = Vector2(1074, -21)
+polygon = PackedVector2Array(-635, -111, -627, -287, -553, -476, -453, -572, -239, -642, 379, -599, 930, -554, 1054, -428, 1059, -170, 1059, 138, 644, 152, 425, 114, 247, 140, 203, 197, 203, 294, 1173, 291, 1186, -594, -420, -756, -740, -407, -717, -110)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="DarknessSectionCollisions"]
+position = Vector2(1349, -198)
+polygon = PackedVector2Array(-891, 254, -654, 264, -378, 290, -221, 314, -187, 356, -192, 474, -896, 461)
 
 [node name="DarknessCollisions" type="StaticBody2D" parent="."]
 position = Vector2(4144, 418)
@@ -416,10 +421,10 @@ debug_color = Color(0, 0.647059, 0.172549, 0.419608)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(333, 183)
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_p8phd")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-scale = Vector2(0.5, 0.75)
 texture = ExtResource("13_hkv8v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -439,8 +444,33 @@ script = ExtResource("3_7arc3")
 metadata/_edit_use_anchors_ = true
 
 [node name="Death1" type="Sprite2D" parent="CharacterBody2D/Camera2D"]
-position = Vector2(510, -282)
-texture = ExtResource("15_v066o")
+visible = false
+position = Vector2(396.5, -69.5)
+scale = Vector2(0.498611, 0.935185)
+texture = ExtResource("17_u7837")
+
+[node name="Death2" type="Sprite2D" parent="CharacterBody2D/Camera2D"]
+visible = false
+position = Vector2(279.5, 186)
+scale = Vector2(0.826389, 0.511111)
+texture = ExtResource("17_u7837")
+
+[node name="Death3" type="Sprite2D" parent="CharacterBody2D/Camera2D"]
+visible = false
+position = Vector2(-295.5, 211)
+scale = Vector2(0.779167, 0.422222)
+texture = ExtResource("17_u7837")
+
+[node name="Death4" type="Sprite2D" parent="CharacterBody2D/Camera2D"]
+visible = false
+position = Vector2(-351, -105.5)
+scale = Vector2(0.625, 0.809259)
+texture = ExtResource("17_u7837")
+
+[node name="Death5" type="Sprite2D" parent="CharacterBody2D/Camera2D"]
+visible = false
+position = Vector2(51, -54)
+texture = ExtResource("17_u7837")
 
 [node name="BreakableBox" type="StaticBody2D" parent="."]
 position = Vector2(3598, 56)

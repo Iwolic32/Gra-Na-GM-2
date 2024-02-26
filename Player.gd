@@ -60,8 +60,40 @@ func PlayerDeath():
 func PlayerScreenCorruption():
 	if global.PlayerDeathCounter == 0:
 		$Camera2D/Death1.hide()
+		$Camera2D/Death2.hide()
+		$Camera2D/Death3.hide()
+		$Camera2D/Death4.hide()
+		$Camera2D/Death5.hide()
 	if global.PlayerDeathCounter == 1:
 		$Camera2D/Death1.show()
+		$Camera2D/Death2.hide()
+		$Camera2D/Death3.hide()
+		$Camera2D/Death4.hide()
+		$Camera2D/Death5.hide()
+	if global.PlayerDeathCounter == 2:
+		$Camera2D/Death1.show()
+		$Camera2D/Death2.show()
+		$Camera2D/Death3.hide()
+		$Camera2D/Death4.hide()
+		$Camera2D/Death5.hide()
+	if global.PlayerDeathCounter == 3:
+		$Camera2D/Death1.show()
+		$Camera2D/Death2.show()
+		$Camera2D/Death3.show()
+		$Camera2D/Death4.hide()
+		$Camera2D/Death5.hide()
+	if global.PlayerDeathCounter == 4:
+		$Camera2D/Death1.show()
+		$Camera2D/Death2.show()
+		$Camera2D/Death3.show()
+		$Camera2D/Death4.show()
+		$Camera2D/Death5.hide()
+	if global.PlayerDeathCounter == 5:
+		$Camera2D/Death1.show()
+		$Camera2D/Death2.show()
+		$Camera2D/Death3.show()
+		$Camera2D/Death4.show()
+		$Camera2D/Death5.show()
 
 func PlayerSprite():
 	if global.Facing == -1:
