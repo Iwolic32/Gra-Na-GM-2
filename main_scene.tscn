@@ -121,14 +121,14 @@ size = Vector2(30, 181)
 radius = 4.0
 height = 22.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kiha"]
-size = Vector2(40, 55)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_cjiw3"]
 radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qbeo5"]
 radius = 9.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kiha"]
+size = Vector2(40, 55)
 
 [node name="MainScene" type="Node2D"]
 
@@ -421,13 +421,14 @@ debug_color = Color(0, 0.647059, 0.172549, 0.419608)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(333, 183)
-scale = Vector2(0.75, 0.75)
 script = ExtResource("1_p8phd")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("13_hkv8v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
 shape = SubResource("CapsuleShape2D_mdpi5")
 debug_color = Color(0.839216, 0, 0.937255, 0.419608)
 
@@ -520,14 +521,6 @@ polygon = PackedVector2Array(-10, -10, 0, 10, 10, -10)
 position = Vector2(0, 19)
 shape = SubResource("CapsuleShape2D_bjvsc")
 
-[node name="DEBUG RockProvider" type="Area2D" parent="."]
-position = Vector2(37, 609)
-script = ExtResource("17_ucwk2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DEBUG RockProvider"]
-position = Vector2(-9, -15.5)
-shape = SubResource("RectangleShape2D_8kiha")
-
 [node name="Rock" type="RigidBody2D" parent="." groups=["Rock"]]
 position = Vector2(3716, -57)
 gravity_scale = 0.3
@@ -545,6 +538,19 @@ shape = SubResource("CircleShape2D_qbeo5")
 [node name="Timer" type="Timer" parent="Rock"]
 wait_time = 0.01
 one_shot = true
+
+[node name="ChasingBats" type="StaticBody2D" parent="."]
+position = Vector2(4678, 436)
+
+[node name="Area2D" type="Area2D" parent="ChasingBats"]
+
+[node name="DEBUG RockProvider" type="Area2D" parent="."]
+position = Vector2(37, 609)
+script = ExtResource("17_ucwk2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DEBUG RockProvider"]
+position = Vector2(-9, -15.5)
+shape = SubResource("RectangleShape2D_8kiha")
 
 [node name="DEBUG DeathBox" type="Area2D" parent="."]
 position = Vector2(129, 659)
@@ -570,8 +576,8 @@ shape = SubResource("RectangleShape2D_8kiha")
 [connection signal="body_entered" from="BreakableBox/Area2D" to="BreakableBox" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Spike/PlayerDetection" to="Spike" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Spike/KillingCollision" to="Spike" method="_on_killing_collision_body_entered"]
-[connection signal="body_entered" from="DEBUG RockProvider" to="DEBUG RockProvider" method="_on_body_entered"]
 [connection signal="body_entered" from="Rock/Area2D" to="Rock" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Rock/Area2D" to="Rock" method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Rock/Timer" to="Rock" method="_on_timer_timeout"]
+[connection signal="body_entered" from="DEBUG RockProvider" to="DEBUG RockProvider" method="_on_body_entered"]
 [connection signal="body_entered" from="DEBUG DeathBox" to="DEBUG DeathBox" method="_on_body_entered"]
