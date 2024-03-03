@@ -7,12 +7,12 @@ func _process(_delta):
 	PickUp()
 
 func MoveTheRock():
+	if int(Input.is_action_pressed("Jump")):
+		global.Facing = 2
 	if int(Input.is_action_pressed("Right")):
 		global.Facing = 1
 	if int(Input.is_action_pressed("Left")):
 		global.Facing = -1
-	if int(Input.is_action_pressed("Jump")):
-		global.Facing = 2
 	if global.SharpRockEquipped == 1 and int(Input.is_action_pressed("Attack")):
 		if global.Facing == 1:
 			apply_impulse(Vector2(500,-250))

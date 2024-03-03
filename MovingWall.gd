@@ -6,4 +6,4 @@ func _process(_delta):
 	MoveTheWall()
 
 func MoveTheWall():
-	position.y = -global.WindedUpTimer + 386
+	position.y = -global.WindedUpTimer + 376

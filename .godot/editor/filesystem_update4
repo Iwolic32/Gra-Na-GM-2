@@ -1,2 +1,5 @@
 res://main_scene.tscn
-res://Player.gd
+res://FullGrey.gdshader
+res://MovingWall.gd
+res://Crank.gd
+res://Rock.gd

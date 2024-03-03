@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708977635
+::res://::1709471975
 Average RimRim.png::CompressedTexture2D::3613996087358367554::1708977635::1708977635::1::::<><>::
 Box.gd::GDScript::-1::1707581835::0::1::::<>RigidBody2D<>::
 BOX.png::CompressedTexture2D::4610024132855867184::1706967573::1706967574::1::::<><>::
@@ -18,13 +18,19 @@ icon.svg::CompressedTexture2D::4384930846229977542::1706464751::1706464765::1:::
 Key.gd::GDScript::-1::1707581696::0::1::::<>StaticBody2D<>::
 Ladder.gd::GDScript::-1::1707501351::0::1::::<>StaticBody2D<>::
 Ladder.png::CompressedTexture2D::695387126113504730::1707501959::1707501960::1::::<><>::
-main_scene.tscn::PackedScene::9136619876685865494::1708977301::0::1::::<><>::res://Box.gd<>res://Player.gd<>uid://b6xeoocl3x14w::::res://BOX.png<>res://Global.gd<>res://Button.gd<>res://Crank.gd<>res://DarknessCollisions.gd<>res://MovingWall.gd<>uid://c7edarkkuigu8::::res://WALL.png<>uid://dltvlbp6e7s4f::::res://CRANK.png<>res://Key.gd<>res://RedKeyDoor.gd<>res://Ladder.gd<>res://Memory1 (LadderSection).gd<>uid://j536otot6ole::::res://Ladder.png<>uid://dp4hiky4wt3rq::::res://SpriteStaszek.png<>uid://d2jxj80ul8jyv::::res://Eye center big.png<>res://BreakableBox.gd<>res://Spike.gd<>res://DEBUG RockProvider.gd<>res://Rock.gd<>res://DEBUG DeathBox.gd
+main_scene.tscn::PackedScene::-1::1709471975::0::1::::<><>::
 Memory1 (LadderSection).gd::GDScript::-1::1708374948::0::1::::<>StaticBody2D<>::
 MovingWall.gd::GDScript::-1::1706967256::0::1::::<>StaticBody2D<>::
-Player.gd::GDScript::-1::1708375234::0::1::::<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1708977926::0::1::::<>CharacterBody2D<>::
 PLAYER.png::CompressedTexture2D::6898942561241478492::1706968063::1706968063::1::::<><>::
 RedKeyDoor.gd::GDScript::-1::1707581960::0::1::::<>StaticBody2D<>::
 Rock.gd::GDScript::-1::1708365354::0::1::::<>RigidBody2D<>::
 Spike.gd::GDScript::-1::1708374948::0::1::::<>RigidBody2D<>::
-SpriteStaszek.png::CompressedTexture2D::8272401529474740698::1708367372::1708367372::1::::<><>::
 WALL.png::CompressedTexture2D::7027324934624176545::1706967573::1706967574::1::::<><>::
+::res://resources/::1709471975
+kamienie_tiles.png::CompressedTexture2D::6548510631422886151::1709471902::1709471964::1::::<><>::
+kamień.png::CompressedTexture2D::1619388799023179770::1709471902::1709471966::1::::<><>::
+memory1-sheet.png::CompressedTexture2D::4409433091362069575::1709471902::1709471927::1::::<><>::
+memory1.png::CompressedTexture2D::1842658051867023606::1709471902::1709471924::1::::<><>::
+SpriteStaszek.png::CompressedTexture2D::8272401529474740698::1708367372::1709471975::1::::<><>::
+SpriteStaszekWKolorze.png::CompressedTexture2D::8771779268539789040::1709471894::1709471972::1::::<><>::

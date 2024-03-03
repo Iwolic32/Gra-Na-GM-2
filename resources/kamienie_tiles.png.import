@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp4hiky4wt3rq"
-path="res://.godot/imported/SpriteStaszek.png-256814a272eced49682fe3b4d3497d4d.ctex"
+uid="uid://c0kfapoykc8cp"
+path="res://.godot/imported/kamienie_tiles.png-a1588dff4efaf25f212c206a511c6396.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpriteStaszek.png"
-dest_files=["res://.godot/imported/SpriteStaszek.png-256814a272eced49682fe3b4d3497d4d.ctex"]
+source_file="res://resources/kamienie_tiles.png"
+dest_files=["res://.godot/imported/kamienie_tiles.png-a1588dff4efaf25f212c206a511c6396.ctex"]
 
 [params]
 
