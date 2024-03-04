@@ -1,30 +1,31 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1709471975
+::res://::1709566784
 Average RimRim.png::CompressedTexture2D::3613996087358367554::1708977635::1708977635::1::::<><>::
 Box.gd::GDScript::-1::1707581835::0::1::::<>RigidBody2D<>::
 BOX.png::CompressedTexture2D::4610024132855867184::1706967573::1706967574::1::::<><>::
 BreakableBox.gd::GDScript::-1::1708194540::0::1::::<>StaticBody2D<>::
 Button.gd::GDScript::-1::1706966130::0::1::::<>StaticBody2D<>::
 CharacterBody2D2.gd::GDScript::-1::1706467381::0::1::::<>CharacterBody2D<>::
-Crank.gd::GDScript::-1::1708368626::0::1::::<>StaticBody2D<>::
+Crank.gd::GDScript::-1::1709476079::0::1::::<>StaticBody2D<>::
 CRANK.png::CompressedTexture2D::7971857286116384135::1706967573::1706967574::1::::<><>::
 DarknessCollisions.gd::GDScript::-1::1708375048::0::1::::<>StaticBody2D<>::
 DEBUG DeathBox.gd::GDScript::-1::1708374963::0::1::::<>Area2D<>::
 DEBUG RockProvider.gd::GDScript::-1::1708183065::0::1::::<>Area2D<>::
 export_presets.cfg::TextFile::-1::1707582014::0::1::::<><>::
 Eye center big.png::CompressedTexture2D::9074354564886869857::1708367961::1708367961::1::::<><>::
+FullGrey.gdshader::Shader::-1::1709479169::0::1::::<><>::
 Global.gd::GDScript::-1::1708374948::0::1::::<>RichTextLabel<>::
 icon.svg::CompressedTexture2D::4384930846229977542::1706464751::1706464765::1::::<><>::
 Key.gd::GDScript::-1::1707581696::0::1::::<>StaticBody2D<>::
 Ladder.gd::GDScript::-1::1707501351::0::1::::<>StaticBody2D<>::
 Ladder.png::CompressedTexture2D::695387126113504730::1707501959::1707501960::1::::<><>::
-main_scene.tscn::PackedScene::-1::1709471975::0::1::::<><>::
+main_scene.tscn::PackedScene::796092274019974139::1709479168::0::1::::<><>::res://Box.gd<>res://Player.gd<>uid://b6xeoocl3x14w::::res://BOX.png<>res://Global.gd<>res://Button.gd<>res://Crank.gd<>res://DarknessCollisions.gd<>res://FullGrey.gdshader<>res://MovingWall.gd<>uid://c7edarkkuigu8::::res://WALL.png<>uid://dltvlbp6e7s4f::::res://CRANK.png<>res://Key.gd<>res://RedKeyDoor.gd<>res://Ladder.gd<>res://Memory1 (LadderSection).gd<>uid://j536otot6ole::::res://Ladder.png<>uid://dw8d6m72hkcno::::res://resources/SpriteStaszekWKolorze.png<>res://BreakableBox.gd<>res://Spike.gd<>uid://brqv8tutc3m6u::::res://Average RimRim.png<>res://DEBUG RockProvider.gd<>res://Rock.gd<>uid://b327yo6i7daot::::res://resources/memory1-sheet.png<>res://DEBUG DeathBox.gd<>uid://c0kfapoykc8cp::::res://resources/kamienie_tiles.png<>uid://xcpdkbrmjfdy::::res://resources/kamień.png
 Memory1 (LadderSection).gd::GDScript::-1::1708374948::0::1::::<>StaticBody2D<>::
-MovingWall.gd::GDScript::-1::1706967256::0::1::::<>StaticBody2D<>::
+MovingWall.gd::GDScript::-1::1709476004::0::1::::<>StaticBody2D<>::
 Player.gd::GDScript::-1::1708977926::0::1::::<>CharacterBody2D<>::
 PLAYER.png::CompressedTexture2D::6898942561241478492::1706968063::1706968063::1::::<><>::
 RedKeyDoor.gd::GDScript::-1::1707581960::0::1::::<>StaticBody2D<>::
-Rock.gd::GDScript::-1::1708365354::0::1::::<>RigidBody2D<>::
+Rock.gd::GDScript::-1::1709476845::0::1::::<>RigidBody2D<>::
 Spike.gd::GDScript::-1::1708374948::0::1::::<>RigidBody2D<>::
 WALL.png::CompressedTexture2D::7027324934624176545::1706967573::1706967574::1::::<><>::
 ::res://resources/::1709471975

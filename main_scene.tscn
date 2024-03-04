@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://llvr2dnfg6mh"]
+[gd_scene load_steps=73 format=3 uid="uid://llvr2dnfg6mh"]
 
 [ext_resource type="Script" path="res://Box.gd" id="1_a21ha"]
 [ext_resource type="Script" path="res://Player.gd" id="1_p8phd"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://DEBUG DeathBox.gd" id="20_ikynr"]
 [ext_resource type="Texture2D" uid="uid://c0kfapoykc8cp" path="res://resources/kamienie_tiles.png" id="21_eohaf"]
 [ext_resource type="Texture2D" uid="uid://xcpdkbrmjfdy" path="res://resources/kamień.png" id="22_c7mbn"]
+[ext_resource type="Script" path="res://ChasingBats.gd" id="24_eunfm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdxa6"]
 size = Vector2(1124.5, 344)
@@ -159,7 +160,13 @@ radius = 4.0
 radius = 9.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5aad2"]
-size = Vector2(68, 66)
+size = Vector2(42, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ham7i"]
+size = Vector2(42, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u7fo"]
+size = Vector2(35, 35)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2dkpk"]
 shader = ExtResource("4_r7skq")
@@ -362,7 +369,7 @@ position = Vector2(1349, -198)
 polygon = PackedVector2Array(-891, 254, -654, 264, -378, 290, -221, 314, -187, 356, -192, 474, -896, 461)
 
 [node name="Darkness" type="StaticBody2D" parent="."]
-position = Vector2(3908, 409)
+position = Vector2(3803, 326)
 script = ExtResource("4_il0hk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Darkness"]
@@ -641,12 +648,33 @@ wait_time = 0.02
 one_shot = true
 
 [node name="ChasingBats" type="StaticBody2D" parent="."]
-position = Vector2(4690, 374)
+position = Vector2(3988, 384)
+script = ExtResource("24_eunfm")
 
-[node name="Area2D" type="Area2D" parent="ChasingBats"]
+[node name="Trigger" type="Area2D" parent="ChasingBats"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ChasingBats/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChasingBats/Trigger"]
 shape = SubResource("RectangleShape2D_5aad2")
+
+[node name="Killzone" type="Area2D" parent="ChasingBats"]
+position = Vector2(2, -139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChasingBats/Killzone"]
+shape = SubResource("RectangleShape2D_ham7i")
+debug_color = Color(0.611765, 0, 0.141176, 0.490196)
+
+[node name="Safe" type="Area2D" parent="ChasingBats"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChasingBats/Safe"]
+position = Vector2(596, 46)
+shape = SubResource("RectangleShape2D_0u7fo")
+
+[node name="InnitialTimer" type="Timer" parent="ChasingBats"]
+wait_time = 0.5
+one_shot = true
+
+[node name="MovementTickTimer" type="Timer" parent="ChasingBats"]
+wait_time = 0.01
 
 [node name="TileMap" type="TileMap" parent="."]
 material = SubResource("ShaderMaterial_2dkpk")
@@ -690,5 +718,11 @@ shape = SubResource("RectangleShape2D_8kiha")
 [connection signal="body_entered" from="Rock/Area2D" to="Rock" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Rock/Area2D" to="Rock" method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Rock/Timer" to="Rock" method="_on_timer_timeout"]
+[connection signal="body_entered" from="ChasingBats/Trigger" to="ChasingBats" method="_on_trigger_body_entered"]
+[connection signal="body_entered" from="ChasingBats/Killzone" to="ChasingBats" method="_on_killzone_body_entered"]
+[connection signal="body_entered" from="ChasingBats/Safe" to="ChasingBats" method="_on_safe_body_entered"]
+[connection signal="body_exited" from="ChasingBats/Safe" to="ChasingBats" method="_on_safe_body_exited"]
+[connection signal="timeout" from="ChasingBats/InnitialTimer" to="ChasingBats" method="_on_innitial_timer_timeout"]
+[connection signal="timeout" from="ChasingBats/MovementTickTimer" to="ChasingBats" method="_on_movement_tick_timer_timeout"]
 [connection signal="body_entered" from="DEBUG RockProvider" to="DEBUG RockProvider" method="_on_body_entered"]
 [connection signal="body_entered" from="DEBUG DeathBox" to="DEBUG DeathBox" method="_on_body_entered"]

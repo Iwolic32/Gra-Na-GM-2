@@ -43,6 +43,11 @@ func PlayerMovement():
 	else:
 		velocity.y += global.PlayerGravity
 	
+	if InputDown == 1 and is_on_floor():
+		global.PlayerCrouched = 1
+	else:
+		global.PlayerCrouched = 0
+	
 	if global.PlayerIsOnLadder == 1 and InputUp == 1:
 		velocity.y = global.PlayerLadderUpMovement
 	elif global.PlayerIsOnLadder == 1 and InputDown == 1:

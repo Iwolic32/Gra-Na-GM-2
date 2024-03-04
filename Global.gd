@@ -17,7 +17,7 @@ var Facing = 0
 var RockLVelocity = null
 var MemoryCollected = 0
 var MemoryJustCollected = 0
-
+var PlayerCrouched = 0
 func _process(_delta):
 	text = ""
 	text += str("WindedUpTimer: ", global.WindedUpTimer)
@@ -28,3 +28,4 @@ func _process(_delta):
 	text += str("\nPlayerPos: ", global.PlayerPosition)
 	text += str("\nFacing: ", global.Facing)
 	text += str("\nLVelocity: ", global.RockLVelocity)
+	text += str("\nPlayerCrouched:  ", global.PlayerCrouched)

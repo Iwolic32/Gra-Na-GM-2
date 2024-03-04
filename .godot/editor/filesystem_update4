@@ -1,5 +1,6 @@
+res://DarknessCollisions.gd
+res://ChasingBats.gd
 res://main_scene.tscn
 res://FullGrey.gdshader
-res://MovingWall.gd
-res://Crank.gd
-res://Rock.gd
+res://Global.gd
+res://Player.gd
