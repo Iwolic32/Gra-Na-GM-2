@@ -23,6 +23,7 @@ func _on_movement_tick_timer_timeout():
 		$Killzone.position.x += 2
 	else:
 		$Killzone.position = Vector2(0,-999)
+		$MovementTickTimer.stop()
 
 
 func _on_safe_body_entered(body):
@@ -43,3 +44,4 @@ func _on_killzone_body_entered(body):
 			global.PlayerJustDied = 1
 			global.PlayerDeathCounter += 1
 			$Killzone.position = Vector2(0,-999)
+			$MovementTickTimer.stop()
