@@ -6,4 +6,5 @@ func _on_area_2d_body_entered(body):
 		global.MemoryCollected += 1
 		global.MemoryJustCollected = 1
 		global.PlayerDeathCounter = 0
+		position.y = -9999
 		hide()

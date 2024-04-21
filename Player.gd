@@ -9,12 +9,14 @@ var Speed = 500
 var Acc = 100
 var Friction = 50
 var Facing = 0
+var t = 0.0
 func _ready():
 	Engine.max_fps = 60
 
 
 
-func _process(_delta):
+func _process(delta):
+	t += delta * 0.4
 	global.PlayerPosition = position
 	PlayerScreenCorruption()
 	PlayerInput()
@@ -23,6 +25,7 @@ func _process(_delta):
 	PlayerDeath()
 	PlayerSprite()
 	move_and_slide() ##### VERY FUCKING CRUICIAL TO MOVING ||FOR FUTURE YOU||
+	BATBOSSCamera()
 
 
 func PlayerInput():
@@ -55,7 +58,18 @@ func PlayerMovement():
 	
 func AddFriction():
 	velocity = velocity.move_toward(Vector2.ZERO, Friction)
-		
+	
+func BATBOSSCamera():
+	if position.x > 4915 and position.x < 6194:
+		$Camera2D.global_position = position.lerp(Vector2(5552,32), t)
+		$Camera2D.zoom = Vector2(0.7,0.7)
+		if t >= 1:
+			$Camera2D.global_position = Vector2(5552,32)
+			t=1
+	else:
+		$Camera2D.global_position = position
+		t=0
+
 		
 func PlayerDeath():
 	if global.PlayerJustDied == 1:
@@ -101,7 +115,7 @@ func PlayerScreenCorruption():
 		$Camera2D/Death5.show()
 
 func PlayerSprite():
-	if global.Facing == -1:
+	if global.Facing == -1 and velocity.x == 0:
 		$Sprite2D.flip_h = true
 	if global.Facing == 1:
 		$Sprite2D.flip_h = false

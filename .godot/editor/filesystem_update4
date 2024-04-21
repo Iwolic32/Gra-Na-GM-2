@@ -1,7 +1,4 @@
-res://DarknessCollisions.gd
-res://ChasingBats.gd
 res://main_scene.tscn
 res://FullGrey.gdshader
-res://Global.gd
+res://Rock.tscn
 res://Player.gd
-res://BATBOSS.gd
