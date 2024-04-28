@@ -25,6 +25,7 @@ func _physics_process(delta):
 			add_child(RockInstance)
 			RockInstance.position = b.position + Vector2(0,40)
 			
+			
 		if b.position.y <= -150 and global.PlayerPosition.x > 4915 and global.PlayerPosition.x < 6191:
 			Attack = 1
 			TargetPosition = Vector2(global.PlayerPosition.x -5552,362)
@@ -39,7 +40,8 @@ func _physics_process(delta):
 
 func _on_damage_body_entered(body):
 	if body.is_in_group("Player"):
-		pass
+		global.PlayerDeathCounter += 1
+		global.PlayerJustDied = 1
 
 
 func _on_damage_body_exited(body):

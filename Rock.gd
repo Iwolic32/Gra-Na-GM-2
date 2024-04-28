@@ -2,11 +2,18 @@ extends RigidBody2D
 
 var PlayerEnteredInteractionHitbox = 0
 var SharpRockEquipped = 0
+var RockJustSpawned = 0
+var random = RandomNumberGenerator.new()
 func _process(_delta):
 	MoveTheRock()
 	PickUp()
-
+func _ready():
+	RockJustSpawned = 1
+	
 func MoveTheRock():
+	if RockJustSpawned == 1:
+		apply_impulse(Vector2(random.randi_range(-20,20),random.randi_range(10,30)))
+		RockJustSpawned = 0
 	if int(Input.is_action_pressed("Jump")):
 		global.Facing = 2
 	if int(Input.is_action_pressed("Right")):
@@ -21,6 +28,7 @@ func MoveTheRock():
 		if global.Facing == 2:
 			apply_impulse(Vector2(0,-500))
 		SharpRockEquipped = 0
+		global.SharpRockEquipped = 0
 	elif SharpRockEquipped == 0:
 		if $Timer.is_stopped() == true:
 			$Timer.start()
@@ -33,7 +41,11 @@ func MoveTheRock():
 
 func PickUp():
 	if PlayerEnteredInteractionHitbox == 1 and int(Input.is_action_pressed("Interact")) == 1:
-		SharpRockEquipped = 1
+		if global.SharpRockEquipped == 0:
+			SharpRockEquipped = 1
+			global.SharpRockEquipped = 1
+		else:
+			pass
 
 
 func _on_timer_timeout():
