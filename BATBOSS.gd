@@ -25,7 +25,6 @@ func _physics_process(delta):
 			add_child(RockInstance)
 			RockInstance.position = b.position + Vector2(0,40)
 			
-			
 		if b.position.y <= -150 and global.PlayerPosition.x > 4915 and global.PlayerPosition.x < 6191:
 			Attack = 1
 			TargetPosition = Vector2(global.PlayerPosition.x -5552,362)

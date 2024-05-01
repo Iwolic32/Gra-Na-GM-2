@@ -10,7 +10,7 @@ func CrankTheCrank():
 	if PlayerEnteredInteractionHitbox == 1 and Input.is_action_pressed("Interact") and global.WindedUpTimer <= 140:
 		global.WindedUpTimer += 1
 	elif global.WindedUpTimer != 0:
-		global.WindedUpTimer -= 1
+		global.WindedUpTimer -= 0.5
 	else:
 		pass
 

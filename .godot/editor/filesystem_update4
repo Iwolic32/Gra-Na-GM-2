@@ -1,5 +1,8 @@
 res://main_scene.tscn
 res://FullGrey.gdshader
-res://Rock.tscn
 res://BATBOSS.gd
 res://Rock.gd
+res://Rock.tscn
+res://Player.gd
+res://Crank.gd
+res://MovingWall.gd

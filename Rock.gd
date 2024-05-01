@@ -7,12 +7,13 @@ var random = RandomNumberGenerator.new()
 func _process(_delta):
 	MoveTheRock()
 	PickUp()
+	
 func _ready():
 	RockJustSpawned = 1
 	
 func MoveTheRock():
 	if RockJustSpawned == 1:
-		apply_impulse(Vector2(random.randi_range(-20,20),random.randi_range(10,30)))
+		apply_impulse(Vector2(random.randi_range(-20,-220),random.randi_range(10,-250)))
 		RockJustSpawned = 0
 	if int(Input.is_action_pressed("Jump")):
 		global.Facing = 2

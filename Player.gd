@@ -5,7 +5,7 @@ var InputDirection = Vector2.ZERO
 var InputJump = 0
 var InputUp = 0
 var InputDown = 0
-var Speed = 500
+var Speed = 250
 var Acc = 100
 var Friction = 50
 var Facing = 0
@@ -60,13 +60,14 @@ func AddFriction():
 	velocity = velocity.move_toward(Vector2.ZERO, Friction)
 	
 func BATBOSSCamera():
-	if position.x > 4915 and position.x < 6194:
+	if position.x > 4915 and position.x < 6194 and position.y <= 459:
 		$Camera2D.global_position = position.lerp(Vector2(5552,32), t)
 		$Camera2D.zoom = Vector2(0.7,0.7)
 		if t >= 1:
 			$Camera2D.global_position = Vector2(5552,32)
 			t=1
 	else:
+		$Camera2D.zoom = Vector2(1,1)
 		$Camera2D.global_position = position
 		t=0
 
@@ -115,7 +116,11 @@ func PlayerScreenCorruption():
 		$Camera2D/Death5.show()
 
 func PlayerSprite():
-	if global.Facing == -1 and velocity.x == 0:
-		$Sprite2D.flip_h = true
-	if global.Facing == 1:
-		$Sprite2D.flip_h = false
+	if global.Facing == -1 and velocity.x != 0:
+		$PlayerAnimationPlayer.play("LWalk")
+	elif global.Facing == 1 and velocity.x != 0:
+		$PlayerAnimationPlayer.play("RWalk")
+	elif global.Facing == 1 and velocity.x == 0:
+		$PlayerAnimationPlayer.play("RIdle")
+	elif global.Facing == -1 and velocity.x == 0:
+		$PlayerAnimationPlayer.play("LIdle")
