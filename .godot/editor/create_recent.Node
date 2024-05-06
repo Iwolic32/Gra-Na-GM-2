@@ -1,5 +1,6 @@
-StaticBody2D
+Timer
 CollisionShape2D
+StaticBody2D
 Area2D
 AnimationPlayer
 CollisionPolygon2D
@@ -8,7 +9,6 @@ Node2D
 Node
 Sprite2D
 RigidBody2D
-Timer
 AnimationTree
 AnimatedSprite2D
 RichTextLabel

@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://llvr2dnfg6mh"]
+[gd_scene load_steps=118 format=3 uid="uid://llvr2dnfg6mh"]
 
 [ext_resource type="Script" path="res://Box.gd" id="1_a21ha"]
 [ext_resource type="Script" path="res://Player.gd" id="1_p8phd"]
@@ -36,7 +36,9 @@
 [ext_resource type="Texture2D" uid="uid://4lkd8vowvhmg" path="res://resources/boss.png" id="30_wu58b"]
 [ext_resource type="Script" path="res://Checkpoint.gd" id="31_o358t"]
 [ext_resource type="Texture2D" uid="uid://bx1ywi38racmk" path="res://resources/tilemapdesert.png" id="32_0gfkl"]
+[ext_resource type="Script" path="res://BossExecutionSpike.gd" id="36_0mwjn"]
 [ext_resource type="Texture2D" uid="uid://d00klwxrf2sae" path="res://resources/drzewo (1).png" id="36_sor0x"]
+[ext_resource type="Script" path="res://BatBlockade.gd" id="38_ro67m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdxa6"]
 size = Vector2(1124.5, 344)
@@ -153,9 +155,8 @@ size = Vector2(35, 35)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e2dfm"]
 shader = ExtResource("4_r7skq")
 
-[sub_resource type="Animation" id="Animation_7b8dh"]
-resource_name = "RWalk"
-length = 1.5
+[sub_resource type="Animation" id="Animation_37k4d"]
+resource_name = "LIdle"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -164,10 +165,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [5, 6, 7, 6]
+"values": [11, 12, 13]
 }
 
 [sub_resource type="Animation" id="Animation_68b0j"]
@@ -187,22 +188,6 @@ tracks/0/keys = {
 "values": [8, 9, 10, 11]
 }
 
-[sub_resource type="Animation" id="Animation_37k4d"]
-resource_name = "LIdle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [11, 12, 13]
-}
-
 [sub_resource type="Animation" id="Animation_vpfgx"]
 resource_name = "RIdle"
 loop_mode = 1
@@ -217,6 +202,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_7b8dh"]
+resource_name = "RWalk"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 6]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_osu7y"]
@@ -588,6 +590,9 @@ shader = ExtResource("4_r7skq")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmjb8"]
 size = Vector2(125.058, 154.616)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw67c"]
+size = Vector2(31, 128)
+
 [node name="MainScene" type="Node2D"]
 
 [node name="MovingWallSectionColisions" type="StaticBody2D" parent="."]
@@ -807,7 +812,7 @@ wait_time = 0.01
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 z_index = 20
-position = Vector2(629, 591)
+position = Vector2(4757, 405)
 script = ExtResource("1_p8phd")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -1150,6 +1155,9 @@ libraries = {
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_2kqcb")
 
+[node name="Timer" type="Timer" parent="BATBOSS/BATBOSSMOVEMENT"]
+wait_time = 0.5
+
 [node name="TileMap" type="TileMap" parent="BATBOSS"]
 material = SubResource("ShaderMaterial_1cdb3")
 position = Vector2(-5552, -32)
@@ -1160,9 +1168,8 @@ layer_0/tile_data = PackedInt32Array(917687, 65536, 0, 983223, 65536, 1, 1048759
 
 [node name="Spike" type="RigidBody2D" parent="BATBOSS"]
 position = Vector2(0, -387)
-gravity_scale = 0.0
 freeze = true
-script = ExtResource("16_wmlgx")
+script = ExtResource("36_0mwjn")
 
 [node name="Sprite2D" type="Sprite2D" parent="BATBOSS/Spike"]
 material = SubResource("ShaderMaterial_6gyt8")
@@ -1174,14 +1181,8 @@ texture = ExtResource("22_eoaa8")
 scale = Vector2(1.40625, 2.90625)
 polygon = PackedVector2Array(-10.6667, -9.97849, -8.53345, -0.688171, -6.3999, 0.344086, -5.68896, 5.16129, -2.84448, 12.7312, 0, 12.7312, 6.3999, 1.72043, 8.53345, 1.03226, 8.53345, -2.4086, 9.95557, -2.4086, 10.6667, -9.97849)
 
-[node name="KillingCollision" type="Area2D" parent="BATBOSS/Spike"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BATBOSS/Spike/KillingCollision"]
-position = Vector2(-1, 28)
-shape = SubResource("CapsuleShape2D_bjvsc")
-
 [node name="Checkpoint" type="Area2D" parent="."]
-position = Vector2(4849, 433)
+position = Vector2(4823, 433)
 script = ExtResource("31_o358t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint"]
@@ -1202,6 +1203,13 @@ shape = SubResource("RectangleShape2D_jmjb8")
 
 [node name="Kolce" type="StaticBody2D" parent="."]
 position = Vector2(3520, 56)
+
+[node name="BatBlockade" type="StaticBody2D" parent="."]
+position = Vector2(4880, 384)
+script = ExtResource("38_ro67m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BatBlockade"]
+shape = SubResource("RectangleShape2D_qw67c")
 
 [connection signal="body_entered" from="ChasingBats/Trigger" to="ChasingBats" method="_on_trigger_body_entered"]
 [connection signal="body_entered" from="ChasingBats/Killzone" to="ChasingBats" method="_on_killzone_body_entered"]
@@ -1232,5 +1240,5 @@ position = Vector2(3520, 56)
 [connection signal="body_entered" from="DEBUG DeathBox" to="DEBUG DeathBox" method="_on_body_entered"]
 [connection signal="body_entered" from="BATBOSS/BATBOSSMOVEMENT/BATBOSS/Damage" to="BATBOSS/BATBOSSMOVEMENT" method="_on_damage_body_entered"]
 [connection signal="body_exited" from="BATBOSS/BATBOSSMOVEMENT/BATBOSS/Damage" to="BATBOSS/BATBOSSMOVEMENT" method="_on_damage_body_exited"]
-[connection signal="body_entered" from="BATBOSS/Spike/KillingCollision" to="BATBOSS/Spike" method="_on_killing_collision_body_entered"]
+[connection signal="timeout" from="BATBOSS/BATBOSSMOVEMENT/Timer" to="BATBOSS/BATBOSSMOVEMENT" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Checkpoint" to="Checkpoint" method="_on_body_entered"]

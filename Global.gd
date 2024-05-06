@@ -18,6 +18,8 @@ var RockLVelocity = null
 var MemoryCollected = 0
 var MemoryJustCollected = 0
 var PlayerCrouched = 0
+var BatBlockade = 0
+var BatBossExecution = 0
 func _process(_delta):
 	text = ""
 	text += str("WindedUpTimer: ", global.WindedUpTimer)

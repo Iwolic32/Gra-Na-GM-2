@@ -18,7 +18,7 @@ func _ready():
 func _process(delta):
 	t += delta * 0.4
 	global.PlayerPosition = position
-	PlayerScreenCorruption()
+	#PlayerScreenCorruption() TEMPORARILY DISABLED, REMEMBER ABOUT IT
 	PlayerInput()
 	AddFriction()
 	PlayerMovement()
@@ -60,7 +60,8 @@ func AddFriction():
 	velocity = velocity.move_toward(Vector2.ZERO, Friction)
 	
 func BATBOSSCamera():
-	if position.x > 4915 and position.x < 6194 and position.y <= 459:
+	if position.x > 4910 and position.x < 6194 and position.y <= 459:
+		global.BatBlockade = 1
 		$Camera2D.global_position = position.lerp(Vector2(5552,32), t)
 		$Camera2D.zoom = Vector2(0.7,0.7)
 		if t >= 1:
@@ -76,6 +77,7 @@ func PlayerDeath():
 	if global.PlayerJustDied == 1:
 		position = global.LastCheckpointLocation
 		global.PlayerJustDied = 0
+		global.BatBlockade = 0
 
 func PlayerScreenCorruption():
 	if global.PlayerDeathCounter == 0:

@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1714581775
+::res://::1715005863
 Average RimRim.png::CompressedTexture2D::3613996087358367554::1714336184::1714336184::1::::<><>::
 BATBOSS.gd::GDScript::-1::1714578991::0::1::::<>Node2D<>::
 Box.gd::GDScript::-1::1714336184::0::1::::<>RigidBody2D<>::
@@ -14,38 +14,44 @@ CRANK.png::CompressedTexture2D::7971857286116384135::1714336184::1714336184::1::
 DarknessCollisions.gd::GDScript::-1::1714336184::0::1::::<>StaticBody2D<>::
 DEBUG DeathBox.gd::GDScript::-1::1714336184::0::1::::<>Area2D<>::
 DEBUG RockProvider.gd::GDScript::-1::1714336184::0::1::::<>Area2D<>::
-export_presets.cfg::TextFile::-1::1714576903::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1714578464::0::1::::<><>::
 Eye center big.png::CompressedTexture2D::9074354564886869857::1714336184::1714336184::1::::<><>::
-FullGrey.gdshader::Shader::-1::1714581775::0::1::::<><>::
+FullGrey.gdshader::Shader::-1::1714773232::0::1::::<><>::
 Global.gd::GDScript::-1::1714336184::0::1::::<>RichTextLabel<>::
 icon.svg::CompressedTexture2D::4384930846229977542::1714336184::1714336184::1::::<><>::
 Key.gd::GDScript::-1::1714336184::0::1::::<>StaticBody2D<>::
 Ladder.gd::GDScript::-1::1714336184::0::1::::<>StaticBody2D<>::
 Ladder.png::CompressedTexture2D::695387126113504730::1714336184::1714336184::1::::<><>::
-main_scene.tscn::PackedScene::796092274019974139::1714581775::0::1::::<><>::res://Box.gd<>res://Player.gd<>res://Global.gd<>res://Button.gd<>res://Crank.gd<>res://DarknessCollisions.gd<>res://FullGrey.gdshader<>res://MovingWall.gd<>uid://c7edarkkuigu8::::res://WALL.png<>uid://b1ayqpo4cjnxv::::res://resources/spritesheet(almos)full.png<>uid://dltvlbp6e7s4f::::res://CRANK.png<>res://Key.gd<>uid://lq3dtckc4trr::::res://resources/wooden-box3x3.png<>res://RedKeyDoor.gd<>res://Ladder.gd<>res://Memory1 (LadderSection).gd<>uid://j536otot6ole::::res://Ladder.png<>res://BreakableBox.gd<>uid://ba8w4lju2rohh::::res://resources/klucz.png<>res://Spike.gd<>uid://brqv8tutc3m6u::::res://Average RimRim.png<>res://Rock.gd<>uid://b327yo6i7daot::::res://resources/memory1-sheet.png<>res://DEBUG DeathBox.gd<>uid://c0kfapoykc8cp::::res://resources/kamienie_tiles.png<>uid://xcpdkbrmjfdy::::res://resources/kamień.png<>uid://wf1mqkse67tv::::res://resources/stalaktyt.png<>uid://ct8kp53yt1oxx::::res://resources/wooden-box3x9.png<>res://ChasingBats.gd<>uid://45466pqjdp38::::res://resources/nietoper(mały).png<>res://BATBOSS.gd<>uid://c4w411djvsv3j::::res://resources/tilelvl2.1.png<>uid://xu0hwq2gbu80::::res://resources/tilelvl2.2.png<>uid://4lkd8vowvhmg::::res://resources/boss.png<>res://Checkpoint.gd<>uid://bx1ywi38racmk::::res://resources/tilemapdesert.png<>uid://d00klwxrf2sae::::res://resources/drzewo (1).png
+main_scene.tscn::PackedScene::796092274019974139::1714585808::0::1::::<><>::res://Box.gd<>res://Player.gd<>res://Global.gd<>res://Button.gd<>res://Crank.gd<>res://DarknessCollisions.gd<>res://FullGrey.gdshader<>res://MovingWall.gd<>uid://c7edarkkuigu8::::res://WALL.png<>uid://b1ayqpo4cjnxv::::res://resources/spritesheet(almos)full.png<>uid://dltvlbp6e7s4f::::res://CRANK.png<>res://Key.gd<>uid://lq3dtckc4trr::::res://resources/wooden-box3x3.png<>res://RedKeyDoor.gd<>res://Ladder.gd<>res://Memory1 (LadderSection).gd<>uid://j536otot6ole::::res://Ladder.png<>res://BreakableBox.gd<>uid://ba8w4lju2rohh::::res://resources/klucz.png<>res://Spike.gd<>uid://brqv8tutc3m6u::::res://Average RimRim.png<>res://Rock.gd<>uid://b327yo6i7daot::::res://resources/memory1-sheet.png<>res://DEBUG DeathBox.gd<>uid://c0kfapoykc8cp::::res://resources/kamienie_tiles.png<>uid://xcpdkbrmjfdy::::res://resources/kamień.png<>uid://wf1mqkse67tv::::res://resources/stalaktyt.png<>uid://ct8kp53yt1oxx::::res://resources/wooden-box3x9.png<>res://ChasingBats.gd<>uid://45466pqjdp38::::res://resources/nietoper(mały).png<>res://BATBOSS.gd<>uid://c4w411djvsv3j::::res://resources/tilelvl2.1.png<>uid://xu0hwq2gbu80::::res://resources/tilelvl2.2.png<>uid://4lkd8vowvhmg::::res://resources/boss.png<>res://Checkpoint.gd<>uid://bx1ywi38racmk::::res://resources/tilemapdesert.png<>uid://d00klwxrf2sae::::res://resources/drzewo (1).png
 Memory1 (LadderSection).gd::GDScript::-1::1714336184::0::1::::<>StaticBody2D<>::
 MovingWall.gd::GDScript::-1::1714581233::0::1::::<>StaticBody2D<>::
 Player.gd::GDScript::-1::1714580359::0::1::::<>CharacterBody2D<>::
 PLAYER.png::CompressedTexture2D::6898942561241478492::1714336184::1714336184::1::::<><>::
 RedKeyDoor.gd::GDScript::-1::1714336184::0::1::::<>StaticBody2D<>::
 Rock.gd::GDScript::-1::1714581733::0::1::::<>RigidBody2D<>::
-Rock.tscn::PackedScene::6962538667476182803::1714581733::0::1::::<><>::res://Rock.gd<>uid://xcpdkbrmjfdy::::res://resources/kamień.png
+Rock.tscn::PackedScene::6962538667476182803::1714584831::0::1::::<><>::res://Rock.gd<>uid://xcpdkbrmjfdy::::res://resources/kamień.png
 Spike.gd::GDScript::-1::1714336184::0::1::::<>RigidBody2D<>::
 WALL.png::CompressedTexture2D::7027324934624176545::1714336184::1714336184::1::::<><>::
-::res://resources/::1714584345
+::res://resources/::1715006395
 boss.png::CompressedTexture2D::2058798914484752706::1714336184::1714336184::1::::<><>::
 climb.png::CompressedTexture2D::2483769565760086955::1714336184::1714336184::1::::<><>::
 down.png::CompressedTexture2D::8488794735520934477::1714336184::1714336184::1::::<><>::
+drabina.png::CompressedTexture2D::1630355805882192027::1715006395::1715006395::1::::<><>::
 drzewo (1).png::CompressedTexture2D::8966220591366596308::1714466564::1714466564::1::::<><>::
 drzewo.png::CompressedTexture2D::7368087965414946940::1714466316::1714466316::1::::<><>::
-kamienie_tiles.png::CompressedTexture2D::6548510631422886151::1714336184::1714336184::1::::<><>::
+drzwi-korbka.png::CompressedTexture2D::7734494872275706316::1715006395::1715006395::1::::<><>::
+drzwi.png::CompressedTexture2D::5636424350503719370::1715006395::1715006395::1::::<><>::
+kamienie_tiles.png::CompressedTexture2D::6548510631422886151::1715006395::1715006395::1::::<><>::
 kamień.png::CompressedTexture2D::1619388799023179770::1714336184::1714336184::1::::<><>::
 klucz.png::CompressedTexture2D::2455933304046743333::1714336184::1714336184::1::::<><>::
+korbka.png::CompressedTexture2D::1644053779408084031::1715006395::1715006395::1::::<><>::
 memory1-sheet.png::CompressedTexture2D::4409433091362069575::1714336184::1714336184::1::::<><>::
 memory1.png::CompressedTexture2D::1842658051867023606::1714336184::1714336184::1::::<><>::
 new_staszek_idle.png::CompressedTexture2D::1030810734016884334::1714336184::1714336184::1::::<><>::
 new_staszek_walk.png::CompressedTexture2D::7831253422853148456::1714336184::1714336184::1::::<><>::
 nietoper(mały).png::CompressedTexture2D::2099225602661062397::1714336184::1714336184::1::::<><>::
+półprzezroczysta-czarna-tekstura.png::CompressedTexture2D::3416187961467376889::1715006395::1715006395::1::::<><>::
+spike.png::CompressedTexture2D::1337280566473072884::1715006395::1715006395::1::::<><>::
 spritesheet(almos)full.png::CompressedTexture2D::4212817209609000031::1714577828::1714577828::1::::<><>::
 SpriteStaszek.png::CompressedTexture2D::8272401529474740698::1714336184::1714336184::1::::<><>::
 SpriteStaszekWKolorze.png::CompressedTexture2D::8771779268539789040::1714336184::1714336184::1::::<><>::
@@ -53,6 +59,8 @@ stalaktyt.png::CompressedTexture2D::1556077376791883667::1714336184::1714336184:
 tilelvl2.1.png::CompressedTexture2D::6855542737589442645::1714336184::1714336184::1::::<><>::
 tilelvl2.2.png::CompressedTexture2D::1657162565597848083::1714336184::1714336184::1::::<><>::
 tilemapdesert.png::CompressedTexture2D::4055934869229117146::1714467930::1714467930::1::::<><>::
+tilemapdesertDOUBLE.png::CompressedTexture2D::1129642212307212874::1715006395::1715006395::1::::<><>::
 water_doplet.mp3::AudioStreamMP3::1624138393109062995::1714584345::1714584345::1::::<><>::
+wersja-chujowa-ale-prosze-masz-jak-chcesz.png::CompressedTexture2D::3941251240430300068::1715006395::1715006395::1::::<><>::
 wooden-box3x3.png::CompressedTexture2D::806813758753939175::1714466316::1714466316::1::::<><>::
 wooden-box3x9.png::CompressedTexture2D::6175189439300935517::1714466316::1714466316::1::::<><>::
