@@ -13,6 +13,10 @@ func CrankTheCrank():
 		global.WindedUpTimer -= 0.5
 	else:
 		pass
+	if PlayerEnteredInteractionHitbox == 1 and Input.is_action_pressed("Interact"):
+		$CrankAnimation.play("Cranking")
+	else:
+		$CrankAnimation.pause()
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):

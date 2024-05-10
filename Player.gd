@@ -126,3 +126,5 @@ func PlayerSprite():
 		$PlayerAnimationPlayer.play("RIdle")
 	elif global.Facing == -1 and velocity.x == 0:
 		$PlayerAnimationPlayer.play("LIdle")
+	else:
+		$PlayerAnimationPlayer.play("RIdle")

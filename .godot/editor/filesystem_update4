@@ -1,9 +1,8 @@
 res://main_scene.tscn
 res://FullGrey.gdshader
 res://Rock.tscn
+res://Crank.gd
 res://BATBOSS.gd
+res://Kolce.gd
+res://DarknessCollisions.gd
 res://Player.gd
-res://Global.gd
-res://BatBlockade.gd
-res://ChasingBats.gd
-res://BossExecutionSpike.gd

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oxlkjld6vpwo"
-path="res://.godot/imported/new_staszek_idle.png-eb08fcfdeab2cd6113534ad7cb7b2351.ctex"
+uid="uid://m6s0be46osx4"
+path="res://.godot/imported/wooden-box-hide.png-14b954a77ffa82d602839e346149406e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/new_staszek_idle.png"
-dest_files=["res://.godot/imported/new_staszek_idle.png-eb08fcfdeab2cd6113534ad7cb7b2351.ctex"]
+source_file="res://resources/wooden-box-hide.png"
+dest_files=["res://.godot/imported/wooden-box-hide.png-14b954a77ffa82d602839e346149406e.ctex"]
 
 [params]
 

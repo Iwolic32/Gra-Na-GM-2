@@ -23,7 +23,7 @@ func _physics_process(delta):
 	if t > 1:
 		t=1
 	if TargetPosition == b.position:
-		if Damaged >= 2:
+		if Damaged >= 10:
 			global.BatBossExecution = 1
 			return
 		if Attack == 1:
@@ -42,7 +42,7 @@ func _physics_process(delta):
 		StartingPosition = b.position
 		t=0
 func _process(_delta):
-	if Damaged >= 2:
+	if Damaged >= 10:
 		TargetPosition = Vector2(0,0)
 
 
@@ -53,6 +53,10 @@ func _on_damage_body_entered(body):
 		global.PlayerJustDied = 1
 	if body.is_in_group("Rock"):
 		Damaged += 1
+	if body.is_in_group("BatKillingSpike") and Damaged >= 10:
+		b.hide()
+		$TileMap.position.y -= 9999
+		$TileMap.hide()
 
 
 func _on_damage_body_exited(body):
