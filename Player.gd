@@ -142,10 +142,11 @@ func PlayerSprite():
 
 
 func Music():
-	if position.x < 4910 and position.y <= 459:
+	if position.x < 4910 and position.y <= 459 or global.BossMusicOffTrigger == 1 and position.y <= 459:
 		if $AmbientAudio.playing == false:
 			$AmbientAudio.play()
-	if position.x > 4910 and position.y <= 459:
+			$BossAudio.stop()
+	if position.x > 4910 and position.y <= 459 and global.BossMusicOffTrigger == 0:
 		if $BossAudio.playing == false:
 			$AmbientAudio.stop()
 			$BossAudio.play()

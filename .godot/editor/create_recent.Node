@@ -1,4 +1,5 @@
 AudioStreamPlayer
+Timer
 Button
 TextureRect
 Sprite2D
@@ -6,7 +7,6 @@ AnimationPlayer
 CollisionShape2D
 Area2D
 CollisionPolygon2D
-Timer
 StaticBody2D
 TileMap
 Node2D

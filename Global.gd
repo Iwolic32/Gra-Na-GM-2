@@ -20,14 +20,15 @@ var MemoryJustCollected = 0
 var PlayerCrouched = 0
 var BatBlockade = 0
 var BatBossExecution = 0
-func _process(_delta):
-	text = ""
-	text += str("WindedUpTimer: ", global.WindedUpTimer)
-	text += str("\nFPS: ", Engine.get_frames_per_second())
-	text += str("\nRedKey: ", global.PlayerHasRedKey)
-	text += str("\nDeaths: ", global.PlayerDeathCounter)
-	text += str("\nHoldingRock: ", global.SharpRockEquipped)
-	text += str("\nPlayerPos: ", global.PlayerPosition)
-	text += str("\nFacing: ", global.Facing)
-	text += str("\nLVelocity: ", global.RockLVelocity)
-	text += str("\nPlayerCrouched:  ", global.PlayerCrouched)
+var BossMusicOffTrigger = 0
+#func _process(_delta):
+#	text = ""
+#	text += str("WindedUpTimer: ", global.WindedUpTimer)
+#	text += str("\nFPS: ", Engine.get_frames_per_second())
+#	text += str("\nRedKey: ", global.PlayerHasRedKey)
+#	text += str("\nDeaths: ", global.PlayerDeathCounter)
+#	text += str("\nHoldingRock: ", global.SharpRockEquipped)
+#	text += str("\nPlayerPos: ", global.PlayerPosition)
+#	text += str("\nFacing: ", global.Facing)
+#	text += str("\nLVelocity: ", global.RockLVelocity)
+#	text += str("\nPlayerCrouched:  ", global.PlayerCrouched)
