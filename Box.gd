@@ -19,11 +19,15 @@ func MoveCube():
 func _on_left_body_entered(body):
 	if body.is_in_group("Player"):
 		PlayerIsInLeft = 1
+		if $BoxSound.playing == false:
+			$BoxSound.play()
 		return PlayerIsInLeft
 
 func _on_right_body_entered(body):
 	if body.is_in_group("Player"):
 		PlayerIsInRight = 1
+		if $BoxSound.playing == false:
+			$BoxSound.play()
 		return PlayerIsInRight
 
 

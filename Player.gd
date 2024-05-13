@@ -18,7 +18,7 @@ func _ready():
 func _process(delta):
 	t += delta * 0.4
 	global.PlayerPosition = position
-	#PlayerScreenCorruption() TEMPORARILY DISABLED, REMEMBER ABOUT IT
+	PlayerScreenCorruption()
 	PlayerInput()
 	AddFriction()
 	PlayerMovement()
@@ -128,10 +128,16 @@ func PlayerSprite():
 		$PlayerAnimationPlayer.play("RCrouch")
 	elif int(Input.is_action_pressed("Down")) == 1 and global.PlayerIsOnLadder == 1 or int(Input.is_action_pressed("Jump")) == 1 and global.PlayerIsOnLadder == 1:
 		$PlayerAnimationPlayer.play("Ladder")
+		if $Ladder.playing == false:
+			$Ladder.play()
 	elif global.Facing == 1 and velocity.x != 0 and global.PlayerIsOnLadder == 0:
 		$PlayerAnimationPlayer.play("RWalk")
+		if $Footsteps.playing == false:
+			$Footsteps.play()
 	elif global.Facing == -1 and velocity.x != 0 and global.PlayerIsOnLadder == 0:
 		$PlayerAnimationPlayer.play("LWalk")
+		if $Footsteps.playing == false:
+			$Footsteps.play()
 	elif global.Facing == 1 and velocity.x == 0 and global.PlayerIsOnLadder == 0:
 		$PlayerAnimationPlayer.play("RIdle")
 	elif global.Facing == -1 and velocity.x == 0 and global.PlayerIsOnLadder == 0:
