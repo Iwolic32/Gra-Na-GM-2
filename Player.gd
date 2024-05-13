@@ -10,6 +10,7 @@ var Acc = 100
 var Friction = 50
 var Facing = 0
 var t = 0.0
+
 func _ready():
 	Engine.max_fps = 60
 	global.LastCheckpointLocation = position
@@ -25,6 +26,7 @@ func _process(delta):
 	PlayerSprite()
 	move_and_slide() ##### VERY FUCKING CRUICIAL TO MOVING ||FOR FUTURE YOU||
 	BATBOSSCamera()
+	Music()
 
 
 func PlayerInput():
@@ -77,6 +79,7 @@ func PlayerDeath():
 		position = global.LastCheckpointLocation
 		global.PlayerJustDied = 0
 		global.BatBlockade = 0
+		$DeathAudio.play()
 
 func PlayerScreenCorruption():
 	if global.PlayerDeathCounter == 0:
@@ -135,3 +138,15 @@ func PlayerSprite():
 		$PlayerAnimationPlayer.play("LIdle")
 	elif global.PlayerIsOnLadder == 1:
 		$PlayerAnimationPlayer.pause()
+
+
+
+func Music():
+	if position.x < 4910 and position.y <= 459:
+		if $AmbientAudio.playing == false:
+			$AmbientAudio.play()
+	if position.x > 4910 and position.y <= 459:
+		if $BossAudio.playing == false:
+			$AmbientAudio.stop()
+			$BossAudio.play()
+		
