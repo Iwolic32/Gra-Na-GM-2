@@ -1,10 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6gx821kdkcrj"]
+[gd_scene load_steps=7 format=3 uid="uid://c6gx821kdkcrj"]
 
 [ext_resource type="Script" path="res://Rock.gd" id="1_vra07"]
 [ext_resource type="Texture2D" uid="uid://xcpdkbrmjfdy" path="res://resources/kamień.png" id="2_d6x7l"]
+[ext_resource type="Shader" path="res://FullGrey.gdshader" id="2_i1yc5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mj4b6"]
 radius = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pn8ti"]
+shader = ExtResource("2_i1yc5")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mdw1q"]
 radius = 9.0
@@ -18,6 +22,7 @@ script = ExtResource("1_vra07")
 shape = SubResource("CircleShape2D_mj4b6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pn8ti")
 position = Vector2(1, 0)
 scale = Vector2(0.78125, 0.78125)
 texture = ExtResource("2_d6x7l")

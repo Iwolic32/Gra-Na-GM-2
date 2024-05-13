@@ -1,8 +1,6 @@
 res://main_scene.tscn
 res://FullGrey.gdshader
 res://Rock.tscn
-res://Crank.gd
 res://BATBOSS.gd
-res://Kolce.gd
-res://DarknessCollisions.gd
+res://ChasingBats.gd
 res://Player.gd

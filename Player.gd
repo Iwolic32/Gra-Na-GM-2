@@ -12,8 +12,7 @@ var Facing = 0
 var t = 0.0
 func _ready():
 	Engine.max_fps = 60
-
-
+	global.LastCheckpointLocation = position
 
 func _process(delta):
 	t += delta * 0.4
@@ -36,7 +35,7 @@ func PlayerInput():
 	InputDown = int(Input.is_action_pressed("Down"))
 	
 func PlayerMovement():
-	if InputDirection != Vector2.ZERO:
+	if InputDirection != Vector2.ZERO and int(Input.is_action_pressed("Down")) == 0:
 		velocity = velocity.move_toward(Speed * InputDirection, Acc)
 	else:
 		AddFriction()
@@ -118,13 +117,21 @@ func PlayerScreenCorruption():
 		$Camera2D/Death5.show()
 
 func PlayerSprite():
-	if global.Facing == -1 and velocity.x != 0:
-		$PlayerAnimationPlayer.play("LWalk")
-	elif global.Facing == 1 and velocity.x != 0:
+	if global.Facing == -1 and int(Input.is_action_pressed("Down")) == 1 and global.PlayerIsOnLadder == 0:
+		$PlayerAnimationPlayer.play("LCrouch")
+	elif global.Facing == 1 and int(Input.is_action_pressed("Down")) == 1 and global.PlayerIsOnLadder == 0:
+		$PlayerAnimationPlayer.play("RCrouch")
+	elif int(Input.is_action_pressed("Down")) == 1 and global.PlayerIsOnLadder == 0:
+		$PlayerAnimationPlayer.play("RCrouch")
+	elif int(Input.is_action_pressed("Down")) == 1 and global.PlayerIsOnLadder == 1 or int(Input.is_action_pressed("Jump")) == 1 and global.PlayerIsOnLadder == 1:
+		$PlayerAnimationPlayer.play("Ladder")
+	elif global.Facing == 1 and velocity.x != 0 and global.PlayerIsOnLadder == 0:
 		$PlayerAnimationPlayer.play("RWalk")
-	elif global.Facing == 1 and velocity.x == 0:
+	elif global.Facing == -1 and velocity.x != 0 and global.PlayerIsOnLadder == 0:
+		$PlayerAnimationPlayer.play("LWalk")
+	elif global.Facing == 1 and velocity.x == 0 and global.PlayerIsOnLadder == 0:
 		$PlayerAnimationPlayer.play("RIdle")
-	elif global.Facing == -1 and velocity.x == 0:
+	elif global.Facing == -1 and velocity.x == 0 and global.PlayerIsOnLadder == 0:
 		$PlayerAnimationPlayer.play("LIdle")
-	else:
-		$PlayerAnimationPlayer.play("RIdle")
+	elif global.PlayerIsOnLadder == 1:
+		$PlayerAnimationPlayer.pause()

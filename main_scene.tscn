@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=3 uid="uid://llvr2dnfg6mh"]
+[gd_scene load_steps=138 format=3 uid="uid://llvr2dnfg6mh"]
 
 [ext_resource type="Script" path="res://Box.gd" id="1_a21ha"]
 [ext_resource type="Script" path="res://Player.gd" id="1_p8phd"]
@@ -173,6 +173,9 @@ size = Vector2(51.5, 35.5)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_haswv"]
 shader = ExtResource("4_r7skq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sowak"]
+size = Vector2(50, 49)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e2dfm"]
 shader = ExtResource("4_r7skq")
 
@@ -195,7 +198,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_68b0j"]
 resource_name = "LWalk"
 length = 1.5
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -242,10 +244,59 @@ tracks/0/keys = {
 "values": [5, 6, 7, 6]
 }
 
+[sub_resource type="Animation" id="Animation_cbkml"]
+resource_name = "RCrouch"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+
+[sub_resource type="Animation" id="Animation_3672m"]
+resource_name = "LCrouch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+
+[sub_resource type="Animation" id="Animation_676oi"]
+resource_name = "LadderDown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_osu7y"]
 _data = {
+"LCrouch": SubResource("Animation_3672m"),
 "LIdle": SubResource("Animation_37k4d"),
 "LWalk": SubResource("Animation_68b0j"),
+"Ladder": SubResource("Animation_676oi"),
+"RCrouch": SubResource("Animation_cbkml"),
 "RIdle": SubResource("Animation_vpfgx"),
 "RWalk": SubResource("Animation_7b8dh")
 }
@@ -823,7 +874,8 @@ position = Vector2(-531, -3)
 
 [node name="Sprite2D" type="Sprite2D" parent="Darkness/AA"]
 visible = false
-scale = Vector2(20, 10)
+position = Vector2(155, 0)
+scale = Vector2(23.1, 10)
 texture = ExtResource("4_knhft")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Darkness/AA"]
@@ -836,7 +888,8 @@ position = Vector2(-446, -3)
 
 [node name="Sprite2D" type="Sprite2D" parent="Darkness/BB"]
 visible = false
-scale = Vector2(20, 10)
+position = Vector2(111, 0)
+scale = Vector2(22.22, 10)
 texture = ExtResource("4_knhft")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Darkness/BB"]
@@ -849,7 +902,8 @@ position = Vector2(-314, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="Darkness/CC"]
 visible = false
-scale = Vector2(20, 10)
+position = Vector2(48, 0)
+scale = Vector2(20.96, 10)
 texture = ExtResource("4_knhft")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Darkness/CC"]
@@ -920,18 +974,22 @@ libraries = {
 position = Vector2(589.25, 46.25)
 shape = SubResource("RectangleShape2D_0u7fo")
 
-[node name="Sprite2D" type="Sprite2D" parent="ChasingBats/Safe"]
-material = SubResource("ShaderMaterial_haswv")
-position = Vector2(552.25, 39.75)
-scale = Vector2(1.54688, 1.54688)
-texture = ExtResource("7_cado6")
-
 [node name="InnitialTimer" type="Timer" parent="ChasingBats"]
 wait_time = 0.5
 one_shot = true
 
 [node name="MovementTickTimer" type="Timer" parent="ChasingBats"]
 wait_time = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="ChasingBats"]
+material = SubResource("ShaderMaterial_haswv")
+position = Vector2(552.25, 39.75)
+scale = Vector2(1.54688, 1.54688)
+texture = ExtResource("7_cado6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChasingBats"]
+position = Vector2(552, 39.5)
+shape = SubResource("RectangleShape2D_sowak")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 z_index = 20
@@ -942,7 +1000,7 @@ script = ExtResource("1_p8phd")
 material = SubResource("ShaderMaterial_e2dfm")
 texture = ExtResource("7_gkesj")
 hframes = 22
-frame = 14
+frame = 8
 
 [node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
 speed_scale = 1.7
@@ -1138,7 +1196,7 @@ scale = Vector2(3.31247, 3.33333)
 texture = ExtResource("23_1cybp")
 
 [node name="Memory1 (LadderSection)" type="StaticBody2D" parent="."]
-position = Vector2(4211, 27)
+position = Vector2(4187, 33)
 script = ExtResource("12_r70cv")
 
 [node name="Area2D" type="Area2D" parent="Memory1 (LadderSection)"]

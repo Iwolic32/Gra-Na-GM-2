@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715370589
+::res://::1715429463
 Average RimRim.png::CompressedTexture2D::3613996087358367554::1714336184::1714336184::1::::<><>::
 BatBlockade.gd::GDScript::-1::1715007660::0::1::::<>StaticBody2D<>::
-BATBOSS.gd::GDScript::-1::1715008293::0::1::::<>Node2D<>::
+BATBOSS.gd::GDScript::-1::1715374654::0::1::::<>Node2D<>::
 BossExecutionSpike.gd::GDScript::-1::1715008333::0::1::::<>RigidBody2D<>::
 Box.gd::GDScript::-1::1714336184::0::1::::<>RigidBody2D<>::
 BOX.png::CompressedTexture2D::4610024132855867184::1714336184::1714336184::1::::<><>::
@@ -11,30 +11,31 @@ Button.gd::GDScript::-1::1714336184::0::1::::<>StaticBody2D<>::
 CharacterBody2D2.gd::GDScript::-1::1714336184::0::1::::<>CharacterBody2D<>::
 ChasingBats.gd::GDScript::-1::1715007660::0::1::::<>StaticBody2D<>::
 Checkpoint.gd::GDScript::-1::1714336184::0::1::::<>Area2D<>::
-Crank.gd::GDScript::-1::1715369836::0::1::::<>StaticBody2D<>::
+Crank.gd::GDScript::-1::1715373956::0::1::::<>StaticBody2D<>::
 CRANK.png::CompressedTexture2D::7971857286116384135::1714336184::1714336184::1::::<><>::
-DarknessCollisions.gd::GDScript::-1::1714336184::0::1::::<>StaticBody2D<>::
+DarknessCollisions.gd::GDScript::-1::1715373192::0::1::::<>StaticBody2D<>::
 DEBUG DeathBox.gd::GDScript::-1::1714336184::0::1::::<>Area2D<>::
 DEBUG RockProvider.gd::GDScript::-1::1714336184::0::1::::<>Area2D<>::
-export_presets.cfg::TextFile::-1::1715264772::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1715374673::0::1::::<><>::
 Eye center big.png::CompressedTexture2D::9074354564886869857::1714336184::1714336184::1::::<><>::
-FullGrey.gdshader::Shader::-1::1715370059::0::1::::<><>::
+FullGrey.gdshader::Shader::-1::1715374677::0::1::::<><>::
 Global.gd::GDScript::-1::1715008019::0::1::::<>RichTextLabel<>::
 icon.svg::CompressedTexture2D::4384930846229977542::1714336184::1714336184::1::::<><>::
 Key.gd::GDScript::-1::1714336184::0::1::::<>StaticBody2D<>::
+Kolce.gd::GDScript::-1::1715372242::0::1::::<>StaticBody2D<>::
 Ladder.gd::GDScript::-1::1714336184::0::1::::<>StaticBody2D<>::
 Ladder.png::CompressedTexture2D::695387126113504730::1714336184::1714336184::1::::<><>::
-main_scene.tscn::PackedScene::796092274019974139::1715370059::0::1::::<><>::res://Box.gd<>uid://6ec6msgh85so::::res://resources/tło1.png<>res://Player.gd<>res://Global.gd<>res://Button.gd<>res://Crank.gd<>res://DarknessCollisions.gd<>res://FullGrey.gdshader<>res://MovingWall.gd<>uid://c7edarkkuigu8::::res://WALL.png<>uid://b1ayqpo4cjnxv::::res://resources/spritesheet(almos)full.png<>res://Key.gd<>uid://lq3dtckc4trr::::res://resources/wooden-box3x3.png<>res://RedKeyDoor.gd<>res://Ladder.gd<>res://Memory1 (LadderSection).gd<>uid://xonlclk7xmvn::::res://resources/korbka.png<>res://BreakableBox.gd<>uid://ba8w4lju2rohh::::res://resources/klucz.png<>res://Spike.gd<>uid://brqv8tutc3m6u::::res://Average RimRim.png<>uid://digwaausjyxkm::::res://resources/drzwi-korbka.png<>res://Rock.gd<>uid://b327yo6i7daot::::res://resources/memory1-sheet.png<>res://DEBUG DeathBox.gd<>uid://c0kfapoykc8cp::::res://resources/kamienie_tiles.png<>uid://xcpdkbrmjfdy::::res://resources/kamień.png<>uid://wf1mqkse67tv::::res://resources/stalaktyt.png<>uid://ct8kp53yt1oxx::::res://resources/wooden-box3x9.png<>res://ChasingBats.gd<>uid://45466pqjdp38::::res://resources/nietoper(mały).png<>res://BATBOSS.gd<>uid://c4w411djvsv3j::::res://resources/tilelvl2.1.png<>uid://xu0hwq2gbu80::::res://resources/tilelvl2.2.png<>uid://4lkd8vowvhmg::::res://resources/boss.png<>res://Checkpoint.gd<>uid://bx1ywi38racmk::::res://resources/tilemapdesert.png<>uid://xh0ysssivmad::::res://resources/drabina.png<>res://BossExecutionSpike.gd<>res://BatBlockade.gd
+main_scene.tscn::PackedScene::796092274019974139::1715374659::0::1::::<><>::res://Box.gd<>res://Player.gd<>res://Global.gd<>res://Button.gd<>res://Crank.gd<>res://DarknessCollisions.gd<>uid://bow3d72ntjc2d::::res://resources/półprzezroczysta-czarna-tekstura.png<>res://FullGrey.gdshader<>res://MovingWall.gd<>uid://c7edarkkuigu8::::res://WALL.png<>uid://m6s0be46osx4::::res://resources/wooden-box-hide.png<>uid://pk20um2jdevq::::res://resources/spritesheet(almos)full.png<>res://Key.gd<>uid://lq3dtckc4trr::::res://resources/wooden-box3x3.png<>res://RedKeyDoor.gd<>res://Ladder.gd<>res://Memory1 (LadderSection).gd<>uid://xonlclk7xmvn::::res://resources/korbka.png<>res://BreakableBox.gd<>uid://ba8w4lju2rohh::::res://resources/klucz.png<>res://Spike.gd<>uid://brqv8tutc3m6u::::res://Average RimRim.png<>uid://digwaausjyxkm::::res://resources/drzwi-korbka.png<>res://Rock.gd<>uid://b327yo6i7daot::::res://resources/memory1-sheet.png<>res://DEBUG DeathBox.gd<>uid://c0kfapoykc8cp::::res://resources/kamienie_tiles.png<>uid://xcpdkbrmjfdy::::res://resources/kamień.png<>uid://wf1mqkse67tv::::res://resources/stalaktyt.png<>uid://cmklc555do187::::res://resources/drzwi.png<>uid://ct8kp53yt1oxx::::res://resources/wooden-box3x9.png<>res://ChasingBats.gd<>uid://45466pqjdp38::::res://resources/nietoper(mały).png<>res://BATBOSS.gd<>uid://c4w411djvsv3j::::res://resources/tilelvl2.1.png<>uid://xu0hwq2gbu80::::res://resources/tilelvl2.2.png<>uid://4lkd8vowvhmg::::res://resources/boss.png<>res://Checkpoint.gd<>uid://bx1ywi38racmk::::res://resources/tilemapdesert.png<>uid://xh0ysssivmad::::res://resources/drabina.png<>res://BossExecutionSpike.gd<>res://BatBlockade.gd<>uid://bwff3j6dbhkxg::::res://resources/wersja-chujowa-ale-prosze-masz-jak-chcesz.png<>uid://dc8flkexp1q2g::::res://resources/drzewo.png<>res://Kolce.gd
 Memory1 (LadderSection).gd::GDScript::-1::1714336184::0::1::::<>StaticBody2D<>::
 MovingWall.gd::GDScript::-1::1714581233::0::1::::<>StaticBody2D<>::
-Player.gd::GDScript::-1::1715007321::0::1::::<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1715374373::0::1::::<>CharacterBody2D<>::
 PLAYER.png::CompressedTexture2D::6898942561241478492::1714336184::1714336184::1::::<><>::
 RedKeyDoor.gd::GDScript::-1::1714336184::0::1::::<>StaticBody2D<>::
 Rock.gd::GDScript::-1::1714581733::0::1::::<>RigidBody2D<>::
-Rock.tscn::PackedScene::6962538667476182803::1715369845::0::1::::<><>::res://Rock.gd<>uid://xcpdkbrmjfdy::::res://resources/kamień.png
+Rock.tscn::PackedScene::6962538667476182803::1715374516::0::1::::<><>::res://Rock.gd<>uid://xcpdkbrmjfdy::::res://resources/kamień.png
 Spike.gd::GDScript::-1::1714336184::0::1::::<>RigidBody2D<>::
 WALL.png::CompressedTexture2D::7027324934624176545::1714336184::1714336184::1::::<><>::
-::res://resources/::1715370589
+::res://resources/::1715370590
 boss.png::CompressedTexture2D::2058798914484752706::1714336184::1714336184::1::::<><>::
 drabina.png::CompressedTexture2D::1630355805882192027::1715006395::1715006395::1::::<><>::
 drzewo.png::CompressedTexture2D::7368087965414946940::1714466316::1714466316::1::::<><>::

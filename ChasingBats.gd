@@ -17,7 +17,7 @@ func _on_innitial_timer_timeout():
 
 func _on_movement_tick_timer_timeout():
 	if $Killzone.position.x <= 887:
-		$Killzone.position.x += 2
+		$Killzone.position.x += 4
 	else:
 		$Killzone.position = Vector2(0,-999)
 		$MovementTickTimer.stop()

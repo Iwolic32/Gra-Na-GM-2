@@ -38,7 +38,7 @@ func _physics_process(delta):
 			TargetPosition = Vector2(global.PlayerPosition.x -5552,362)
 		else:
 			Attack = 0
-			TargetPosition = Vector2(random.randi_range(-646,646),random.randi_range(-362,100))
+			TargetPosition = Vector2(random.randi_range(-646,646),random.randi_range(-274,100))
 		StartingPosition = b.position
 		t=0
 func _process(_delta):
@@ -55,6 +55,7 @@ func _on_damage_body_entered(body):
 		Damaged += 1
 	if body.is_in_group("BatKillingSpike") and Damaged >= 10:
 		b.hide()
+		b.position.y -= 9999
 		$TileMap.position.y -= 9999
 		$TileMap.hide()
 
