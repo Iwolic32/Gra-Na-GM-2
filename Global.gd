@@ -21,7 +21,30 @@ var PlayerCrouched = 0
 var BatBlockade = 0
 var BatBossExecution = 0
 var BossMusicOffTrigger = 0
-#func _process(_delta):
+var suicide = 0
+func _process(_delta):
+	if suicide == 1:
+		WindedUpTimer = 0
+		PlayerGravity = 150
+		PlayerJumpPower = -1750
+		PlayerLadderUpMovement = 0
+		PlayerLadderDownMovement = 0
+		PlayerIsOnLadder = 0
+		PlayerHasRedKey = 0
+		SharpRockEquipped = 0
+		PlayerDeathCounter = 0
+		PlayerJustDied = 0
+		LastCheckpointLocation = Vector2(333,180)
+		PlayerPosition = Vector2(5552,32)
+		Facing = 0
+		RockLVelocity = null
+		MemoryCollected = 0
+		MemoryJustCollected = 0
+		PlayerCrouched = 0
+		BatBlockade = 0
+		BatBossExecution = 0
+		BossMusicOffTrigger = 0
+		suicide = 0
 #	text = ""
 #	text += str("WindedUpTimer: ", global.WindedUpTimer)
 #	text += str("\nFPS: ", Engine.get_frames_per_second())

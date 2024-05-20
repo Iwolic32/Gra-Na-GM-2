@@ -65,11 +65,13 @@ func BATBOSSCamera():
 		global.BatBlockade = 1
 		$Camera2D.global_position = position.lerp(Vector2(5552,32), t)
 		$Camera2D.zoom = Vector2(0.7,0.7)
+		$Camera2D.scale = Vector2(1.43,1.43)
 		if t >= 1:
 			$Camera2D.global_position = Vector2(5552,32)
 			t=1
 	else:
 		$Camera2D.zoom = Vector2(1,1)
+		$Camera2D.scale = Vector2(1,1)
 		$Camera2D.global_position = position
 		t=0
 
@@ -80,6 +82,9 @@ func PlayerDeath():
 		global.PlayerJustDied = 0
 		global.BatBlockade = 0
 		$DeathAudio.play()
+		if global.PlayerDeathCounter >= 5:
+			global.suicide = 1
+			get_tree().reload_current_scene()
 
 func PlayerScreenCorruption():
 	if global.PlayerDeathCounter == 0:
@@ -130,6 +135,10 @@ func PlayerSprite():
 		$PlayerAnimationPlayer.play("Ladder")
 		if $Ladder.playing == false:
 			$Ladder.play()
+	elif !is_on_floor() and global.Facing == -1:
+		$PlayerAnimationPlayer.play("LJump")
+	elif !is_on_floor() and global.Facing == 1:
+		$PlayerAnimationPlayer.play("RJump")
 	elif global.Facing == 1 and velocity.x != 0 and global.PlayerIsOnLadder == 0:
 		$PlayerAnimationPlayer.play("RWalk")
 		if $Footsteps.playing == false:

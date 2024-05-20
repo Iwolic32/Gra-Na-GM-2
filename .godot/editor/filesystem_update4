@@ -1,11 +1,6 @@
 res://main_scene.tscn
 res://FullGrey.gdshader
-res://Rock.tscn
 res://Player.gd
-res://resources/AttackForeshadowing.res
+res://Rock.tscn
 res://TitleScreen.tscn
-res://TitleScreen.gd
-res://BATBOSS.gd
-res://BatBlockade.gd
 res://Global.gd
-res://Box.gd
