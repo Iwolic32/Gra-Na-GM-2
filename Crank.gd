@@ -15,6 +15,9 @@ func CrankTheCrank():
 		pass
 	if PlayerEnteredInteractionHitbox == 1 and Input.is_action_pressed("Interact"):
 		$CrankAnimation.play("Cranking")
+		if $CrankSound.playing == false:
+			$CrankSound.play()
+		
 	else:
 		$CrankAnimation.pause()
 

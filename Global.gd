@@ -22,6 +22,7 @@ var BatBlockade = 0
 var BatBossExecution = 0
 var BossMusicOffTrigger = 0
 var suicide = 0
+
 func _process(_delta):
 	if suicide == 1:
 		WindedUpTimer = 0
@@ -45,7 +46,7 @@ func _process(_delta):
 		BatBossExecution = 0
 		BossMusicOffTrigger = 0
 		suicide = 0
-#	text = ""
+	text = ""
 #	text += str("WindedUpTimer: ", global.WindedUpTimer)
 #	text += str("\nFPS: ", Engine.get_frames_per_second())
 #	text += str("\nRedKey: ", global.PlayerHasRedKey)
@@ -55,3 +56,4 @@ func _process(_delta):
 #	text += str("\nFacing: ", global.Facing)
 #	text += str("\nLVelocity: ", global.RockLVelocity)
 #	text += str("\nPlayerCrouched:  ", global.PlayerCrouched)
+	text += str("\nMemories ", global.MemoryCollected)

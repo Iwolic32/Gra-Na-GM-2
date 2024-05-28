@@ -9,6 +9,7 @@ radius = 4.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pn8ti"]
 shader = ExtResource("2_i1yc5")
+shader_parameter/GreyScale = null
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mdw1q"]
 radius = 9.0

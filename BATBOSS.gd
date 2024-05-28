@@ -17,7 +17,7 @@ func _physics_process(delta):
 #	print(StartingPosition)
 #	print(b.position, "LOCAL")
 #	print(b.global_position, "GLOBAL")
-	print(Damaged)
+#	print(Damaged)
 	t += delta * 0.8
 	b.position = StartingPosition.lerp(TargetPosition, t)
 	if Attack == 1 and StartingPosition.x - TargetPosition.x < 0 and global.BatBossExecution == 0:

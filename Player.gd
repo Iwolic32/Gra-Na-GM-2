@@ -28,7 +28,6 @@ func _process(delta):
 	BATBOSSCamera()
 	Music()
 
-
 func PlayerInput():
 	InputDirection.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
 	InputDirection = InputDirection.normalized()

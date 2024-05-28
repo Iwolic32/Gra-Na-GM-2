@@ -1,6 +1,14 @@
 res://main_scene.tscn
 res://FullGrey.gdshader
-res://Player.gd
+res://Global.gd
+res://TileMap.gd
 res://Rock.tscn
 res://TitleScreen.tscn
-res://Global.gd
+res://main_scene.gd
+res://Player.gd
+res://Actualbck.gd
+res://BATBOSS.gd
+res://Shaders.gd
+res://TileMapShaders.gd
+res://Test.gd
+res://Crank.gd
