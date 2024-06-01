@@ -8,6 +8,7 @@ func _process(_delta):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		Gravity = Vector2(0,10)
+		$"Strzałka".visible = true
 
 func _on_killing_collision_body_entered(body):
 	if body.is_in_group("Player"):

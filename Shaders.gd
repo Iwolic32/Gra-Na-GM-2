@@ -1,8 +1,15 @@
 extends Sprite2D
 
 var Value
-var WantedValue = 1
+var WantedValue = 0
+var ShaderValue = material.get_shader_parameter("Gray Scale")
+
+
 func _process(_delta):
-	material.set_shader_parameter("GrayScale", WantedValue)
+	if global.MemoryCollected == 0:
+		WantedValue = 0
+	if global.MemoryCollected == 1:
+		WantedValue = 0.20
+	
+	material.set_shader_parameter("Gray Scale", WantedValue)
 	Value = material.get_shader_parameter("GrayScale")
-	print(Value)

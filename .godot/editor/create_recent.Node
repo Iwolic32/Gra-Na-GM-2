@@ -1,9 +1,10 @@
+RichTextLabel
+AnimationPlayer
+Sprite2D
 AudioStreamPlayer
 Timer
 Button
 TextureRect
-Sprite2D
-AnimationPlayer
 CollisionShape2D
 Area2D
 CollisionPolygon2D
@@ -14,6 +15,5 @@ Node
 RigidBody2D
 AnimationTree
 AnimatedSprite2D
-RichTextLabel
 Camera2D
 CharacterBody2D

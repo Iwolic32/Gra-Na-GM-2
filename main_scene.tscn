@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=3 uid="uid://llvr2dnfg6mh"]
+[gd_scene load_steps=179 format=3 uid="uid://llvr2dnfg6mh"]
 
 [ext_resource type="Script" path="res://Box.gd" id="1_a21ha"]
 [ext_resource type="Script" path="res://Player.gd" id="1_p8phd"]
@@ -61,12 +61,13 @@
 [ext_resource type="Script" path="res://Checkpoint.gd" id="31_o358t"]
 [ext_resource type="Texture2D" uid="uid://bx1ywi38racmk" path="res://resources/tilemapdesert.png" id="32_0gfkl"]
 [ext_resource type="Texture2D" uid="uid://xh0ysssivmad" path="res://resources/drabina.png" id="33_vicfd"]
-[ext_resource type="AudioStream" uid="uid://c4uopuwporc68" path="res://resources/wooden_block_sliding1.mp3" id="35_00wbk"]
 [ext_resource type="Script" path="res://BossExecutionSpike.gd" id="36_0mwjn"]
-[ext_resource type="AudioStream" uid="uid://wyhqquwy2vlp" path="res://resources/wooden_block_sliding2.mp3" id="36_r60pg"]
-[ext_resource type="AudioStream" uid="uid://x6o43qqpskiq" path="res://resources/wooden_block_sliding3.mp3" id="37_a8bqh"]
+[ext_resource type="AudioStream" uid="uid://buwowuxgnxdmj" path="res://resources/ws1.mp3" id="36_5x7dr"]
+[ext_resource type="AudioStream" uid="uid://befs1o3g15klp" path="res://resources/ws2.mp3" id="37_diu6b"]
+[ext_resource type="AudioStream" uid="uid://1qxawknpalai" path="res://resources/ws3.mp3" id="38_fhgg4"]
 [ext_resource type="Script" path="res://BatBlockade.gd" id="38_ro67m"]
 [ext_resource type="Texture2D" uid="uid://bwff3j6dbhkxg" path="res://resources/wersja-chujowa-ale-prosze-masz-jak-chcesz.png" id="38_rrx1f"]
+[ext_resource type="AudioStream" uid="uid://da8xko17uyq4t" path="res://resources/ws4.mp3" id="39_fi80c"]
 [ext_resource type="AudioStream" uid="uid://cmw0kwpfdjn3n" path="res://resources/crank.mp3" id="42_mqgkl"]
 [ext_resource type="Texture2D" uid="uid://5ptuw56i1tct" path="res://resources/tilemapbck.png" id="42_ns21m"]
 [ext_resource type="Texture2D" uid="uid://dc8flkexp1q2g" path="res://resources/drzewo.png" id="42_y0ovt"]
@@ -77,7 +78,9 @@
 [ext_resource type="AudioStream" uid="uid://lpyh3s64pa23" path="res://resources/moth_scream_v2.mp3" id="48_8ml0f"]
 [ext_resource type="AudioStream" uid="uid://boq0415b532bj" path="res://resources/hitting_moth_final.mp3" id="48_32aek"]
 [ext_resource type="Texture2D" uid="uid://co65uc88o1x1r" path="res://resources/swarm.png" id="50_5p6xs"]
+[ext_resource type="Texture2D" uid="uid://080jq6wj5dev" path="res://resources/strzałka.png" id="56_awsb2"]
 [ext_resource type="Script" path="res://TileMapShaders.gd" id="64_sfvgn"]
+[ext_resource type="Texture2D" uid="uid://dt0bmmjhmo73x" path="res://resources/Black square.png" id="71_70vtd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_scvpo"]
 shader = ExtResource("4_r7skq")
@@ -387,13 +390,15 @@ size = Vector2(12, 95)
 size = Vector2(11.75, 95)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_h8dh7"]
-streams_count = 3
-stream_0/stream = ExtResource("35_00wbk")
+streams_count = 4
+stream_0/stream = ExtResource("36_5x7dr")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("36_r60pg")
+stream_1/stream = ExtResource("37_diu6b")
 stream_1/weight = 1.0
-stream_2/stream = ExtResource("37_a8bqh")
+stream_2/stream = ExtResource("38_fhgg4")
 stream_2/weight = 1.0
+stream_3/stream = ExtResource("39_fi80c")
+stream_3/weight = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vor2"]
 size = Vector2(40, 2)
@@ -496,6 +501,27 @@ size = Vector2(30, 181)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bjvsc"]
 radius = 7.0
 height = 22.0
+
+[sub_resource type="Animation" id="Animation_ab4sf"]
+resource_name = "Strzałka"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Strzałka:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hmm8l"]
+_data = {
+"Strzałka": SubResource("Animation_ab4sf")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cjiw3"]
 radius = 4.0
@@ -1570,6 +1596,21 @@ scale = Vector2(2, 2)
 texture = ExtResource("22_eoaa8")
 script = ExtResource("3_eqn75")
 
+[node name="Strzałka" type="Sprite2D" parent="Spike"]
+position = Vector2(-1, -70)
+texture = ExtResource("56_awsb2")
+hframes = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Spike/Strzałka"]
+offset_left = 6.0
+offset_top = -40.0
+offset_right = 158.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+text = "Press e to pick up
+Press g to throw"
+scroll_active = false
+
 [node name="PlayerDetection" type="Area2D" parent="Spike"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike/PlayerDetection"]
@@ -1585,6 +1626,12 @@ polygon = PackedVector2Array(-10.6667, -9.97849, -8.53345, -0.688171, -6.3999, 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike/KillingCollision"]
 position = Vector2(-1, 28)
 shape = SubResource("CapsuleShape2D_bjvsc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spike"]
+autoplay = "Strzałka"
+libraries = {
+"": SubResource("AnimationLibrary_hmm8l")
+}
 
 [node name="Rock" type="RigidBody2D" parent="." groups=["Rock"]]
 position = Vector2(3344, -124)
@@ -1667,6 +1714,11 @@ shape = SubResource("CapsuleShape2D_2kqcb")
 
 [node name="Timer" type="Timer" parent="BATBOSS/BATBOSSMOVEMENT"]
 wait_time = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="BATBOSS/BATBOSSMOVEMENT"]
+position = Vector2(384, 688.5)
+scale = Vector2(0.192308, 0.712418)
+texture = ExtResource("71_70vtd")
 
 [node name="TileMap" type="TileMap" parent="BATBOSS/BATBOSSMOVEMENT"]
 material = SubResource("ShaderMaterial_1cdb3")
