@@ -27,7 +27,8 @@ func _process(delta):
 	move_and_slide() ##### VERY FUCKING CRUICIAL TO MOVING ||FOR FUTURE YOU||
 	BATBOSSCamera()
 	Music()
-
+	Ending()
+	
 func PlayerInput():
 	InputDirection.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
 	InputDirection = InputDirection.normalized()
@@ -164,4 +165,9 @@ func Music():
 		if $BossAudio.playing == false:
 			$AmbientAudio.stop()
 			$BossAudio.play()
-		
+
+func Ending():
+	if global.Ending == 0:
+		$Sprite2D2.visible = false
+	if global.Ending == 1:
+		$Sprite2D2.visible = true

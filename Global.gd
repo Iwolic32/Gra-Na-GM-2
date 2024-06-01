@@ -22,6 +22,7 @@ var BatBlockade = 0
 var BatBossExecution = 0
 var BossMusicOffTrigger = 0
 var suicide = 0
+var Ending = 0
 
 func _process(_delta):
 	if suicide == 1:
@@ -46,6 +47,7 @@ func _process(_delta):
 		BatBossExecution = 0
 		BossMusicOffTrigger = 0
 		suicide = 0
+		Ending = 0
 #	text = ""
 #	text += str("WindedUpTimer: ", global.WindedUpTimer)
 #	text += str("\nFPS: ", Engine.get_frames_per_second())
