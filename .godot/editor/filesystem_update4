@@ -1,9 +1,4 @@
 res://main_scene.tscn
 res://FullGrey.gdshader
-res://Shaders.gd
-res://Spike.gd
 res://Rock.tscn
 res://TitleScreen.tscn
-res://Global.gd
-res://EndingTrigger.gd
-res://Player.gd
