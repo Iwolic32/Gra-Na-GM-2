@@ -24,10 +24,13 @@ func MoveTheRock():
 	if SharpRockEquipped == 1 and int(Input.is_action_pressed("Attack")):
 		if global.Facing == 1:
 			apply_impulse(Vector2(500,-250))
+			$Stone.play()
 		if global.Facing == -1:
 			apply_impulse(Vector2(-500,-250))
+			$Stone.play()
 		if global.Facing == 2:
 			apply_impulse(Vector2(0,-500))
+			$Stone.play()
 		SharpRockEquipped = 0
 		global.SharpRockEquipped = 0
 	elif SharpRockEquipped == 0:

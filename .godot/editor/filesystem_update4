@@ -1,4 +1,5 @@
 res://main_scene.tscn
 res://FullGrey.gdshader
+res://Rock.gd
 res://Rock.tscn
 res://TitleScreen.tscn

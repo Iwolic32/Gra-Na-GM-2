@@ -7,4 +7,5 @@ func _on_area_2d_body_entered(body):
 		global.MemoryJustCollected = 1
 		global.PlayerDeathCounter = 0
 		position.y = -9999
+		$AudioStreamPlayer.play()
 		hide()
